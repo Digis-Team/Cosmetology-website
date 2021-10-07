@@ -1,4 +1,7 @@
 .navbar-items {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     background: linear-gradient(90deg, rgb(244,229,226) 0%, rgb(233,202,196) 100%);
     height: 80px;
     display: flex;
@@ -8,12 +11,14 @@
 }
 .logo {
     position: relative;
-    top: 10px;
+    /* top: 10px; */
     right: 10px;
     width: 80px;
 }
 .navbar-logo {
     color:  rgb(119, 100, 100);
+    /* left: 50px; */
+
 }
 .nav-menu {
     display: grid;
