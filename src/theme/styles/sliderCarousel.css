@@ -10,7 +10,7 @@
 .link:hover {
     color: rgb(218, 147, 147);
 }
-.moto-parent {
+.motto-parent {
     position:absolute;
     width: 100%;
     height: fit-content;
@@ -19,7 +19,7 @@
     justify-content: center;
     z-index: 10;
 }
-.moto {
+.motto {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     letter-spacing: 3px;

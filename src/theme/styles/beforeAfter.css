@@ -1,0 +1,31 @@
+.before-after-smth{
+    
+    height: fit-content;
+    background: #F5E8E5;
+    display: flex;
+    flex-direction: column;
+}
+.before-after-text{
+    padding: 20px;
+    color: #776464;
+    align-self: center;
+}
+.before-after-slider-parent{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.before-after-slider{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.before-after-photos{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}

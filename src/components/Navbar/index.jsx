@@ -16,10 +16,10 @@ export const Navbar = () => {
                 <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'} />
             </div>
             <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
-                {MENU_ITEMS.map((item,index) => {
+                {MENU_ITEMS.map((item, index) => {
                     return (
                         <li key = {index}>
-                            <a className = {item.cName} href = {item.url}>
+                            <a className = {item.className} href = {item.url}>
                                 {item.title}
                             </a>
                         </li>

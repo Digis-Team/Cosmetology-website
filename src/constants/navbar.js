@@ -2,16 +2,16 @@ export const MENU_ITEMS = [
     {
         title: 'Home',
         url: '#',
-        cName: 'nav-links'
+        className: 'nav-links'
     },
     {
         title: 'Services',
         url: '#',
-        cName: 'nav-links'
+        className: 'nav-links'
     },
     {
         title: 'Products',
         url: '#',
-        cName: 'nav-links'
+        className: 'nav-links'
     }
 ];
