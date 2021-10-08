@@ -1,41 +1,41 @@
 .slider-carousel-slider-container {
-    position: relative;
+	position: relative;
 } 
 .link {
-    text-decoration: none;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: lighter;
+	text-decoration: none;
+	color: #fff;
+	font-size: 2rem;
+	font-weight: lighter;
 }
 .link:hover {
-    color: rgb(218, 147, 147);
+	color: rgb(218, 147, 147);
 }
 .motto-parent {
-    position:absolute;
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    top: 80px;
+	position:absolute;
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	top: 80px;
 }
 .motto {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    text-align: center;
-    color:  #F5E8E5;
-    border: 2px solid #F5E8E5;
-    border-radius: 5px;
-    padding: 15px 155px;
-    background: rgb(0, 0, 0, 0.2);
-    margin-top: 80px;
-    align-self: center;
-    
+	font-family: 'Playfair Display', serif;
+	font-size: 3rem;
+	letter-spacing: 3px;
+	text-align: center;
+	color:  #F5E8E5;
+	border: 2px solid #F5E8E5;
+	border-radius: 5px;
+	padding: 15px 155px;
+	background: rgb(0, 0, 0, 0.2);
+	margin-top: 80px;
+	align-self: center;
+	
 }
 @media screen and (max-width: 960px) {
-    .motto-parent{
-        display: none;
-    }
+	.motto-parent{
+		display: none;
+	}
 }
