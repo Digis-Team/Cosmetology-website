@@ -100,7 +100,7 @@
  }
  @media screen and (max-width: 500px) {
 	.navbar-logo {
-		color: rgba(119, 99, 0, 0);
+		color: rgba(241, 241, 236, 0);
 		transform: translate(50%,20%);
 	}
  }
