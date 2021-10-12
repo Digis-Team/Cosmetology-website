@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, SliderCarousel, BeforeAfter } from '../components';
+import { Navbar, SliderCarousel, BeforeAfter, AboutMe } from '../components';
 
 export const Home = ()=> {
 	return(
@@ -7,6 +7,7 @@ export const Home = ()=> {
 			<Navbar />
 			<SliderCarousel />
 			<BeforeAfter />
+			<AboutMe />
 		</div>
 	)
 }
