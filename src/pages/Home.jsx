@@ -1,13 +1,13 @@
 import React from 'react';
-import { Navbar, SliderCarousel, BeforeAfter, AboutMe } from '../components';
+import {
+  Navbar, SliderCarousel, BeforeAfter, AboutMe,
+} from '../components';
 
-export const Home = ()=> {
-	return(
-		<div>
-			<Navbar />
-			<SliderCarousel />
-			<BeforeAfter />
-			<AboutMe />
-		</div>
-	)
-}
+export const Home = () => (
+  <div>
+    <Navbar />
+    <SliderCarousel />
+    <BeforeAfter />
+    <AboutMe />
+  </div>
+);
