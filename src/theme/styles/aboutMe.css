@@ -1,0 +1,72 @@
+.about-me-container{
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  background: #776464;
+  color: #F5E8E5;
+}
+.about-me-line{
+  margin-top: 20px;
+  width: 50%;
+	height: 2px;
+	padding: 0;
+  background:#F5E8E5 ;
+}
+.about-me-paragraph{
+  width: 70%;
+}
+.about-me-icons{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+}
+.icon-link{
+  text-decoration: none;
+}
+.icon{
+  color: #F5E8E5;
+  font-size: 2rem;
+  padding: 15px;
+  border: solid 2px #F5E8E5;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.icon:hover{
+  border: solid 2px #F5E8E5;
+  color: #776464;
+  background: #E9CAC4;
+}
+.about-me-button{
+  border: none;
+  margin: 10px;
+}
+.button-link{
+  text-decoration: none;
+  color: #F5E8E5;
+  font-size: 2rem;
+  border: solid 2px #F5E8E5;
+  padding: 5px 10px;
+  background:#776464;
+  border-radius: 10px;
+}
+.button-link:hover{
+  border: solid 2px #F5E8E5;
+  color: #776464;
+  background: #E9CAC4;
+}
+.about-me-icon{
+  width: 150px;
+}
+@media screen and (max-width: 600px){
+  .about-me-container{
+    height: max-content;
+  }
+  .about-me-button{
+    display: none;
+  }
+}
