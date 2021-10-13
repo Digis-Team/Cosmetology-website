@@ -1,19 +1,17 @@
-import { Link } from "react-router-dom";
-
 export const MENU_ITEMS = [
 	{
 		title: 'Home',
-		url: <Link to="/"></Link>,
+		url: '/',
 		className: 'nav-links'
 	},
 	{
 		title: 'Services',
-		url: '#',
+		url: '/',
 		className: 'nav-links'
 	},
 	{
 		title: 'Products',
-		url: '#',
+		url: '/',
 		className: 'nav-links'
 	}
 ];
