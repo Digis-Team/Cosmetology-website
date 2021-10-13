@@ -1,5 +1,5 @@
 import React from 'react';
-import { ABOUT_ME_ICONS, BUTTON_LINK } from '../../constants/aboutMe';
+import { ABOUT_ME_ICONS, BUTTON_LINK } from '../../../constants';
 
 export const AboutMe = () => (
   <div className="about-me-container">
@@ -21,7 +21,7 @@ export const AboutMe = () => (
         </div>
       ))}
     </div>
-    <button className="about-me-button">
+    <button type="button" className="about-me-button">
       <a className="button-link" href={BUTTON_LINK}>
         See more
         <i className="fas fa-arrow-right" />
