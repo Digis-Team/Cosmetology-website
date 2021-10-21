@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MENU_ITEMS } from '../../constants';
 import logo from '../../theme/assets/logo.png';
 
@@ -20,9 +21,9 @@ export const NavBar = () => {
       <ul className={`nav-menu ${isClicked ? 'active' : ''}`}>
         {MENU_ITEMS.map((item) => (
           <li>
-            <a className={item.className} href={item.url}>
+            <Link className={item.className} to={item.url}>
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

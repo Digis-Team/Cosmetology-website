@@ -3,7 +3,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from 'react-compare-slider';
-import { BEFORE_AFTER_PICTURES } from '../../../constants';
+import { BEFORE_AFTER_PICTURES } from '../../../../constants';
 
 export const BeforeAfter = () => (
   <div className="before-after-smth">

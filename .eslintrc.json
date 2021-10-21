@@ -18,12 +18,14 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
+    "parser": "babel-eslint",
     "plugins": [
         "react"
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "import/prefer-default-export": "off",
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "no-unused-vars": 0
     }
 }
