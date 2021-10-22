@@ -13,13 +13,13 @@ export const Test = () => {
   };
   const previousStep = () => {
     if (currentStep === 0) {
-      setCount(3);
+      setCount(QUESTIONS.length - 1);
     } else {
       setCount(currentStep - 1);
     }
   };
   const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === currentStep);
-  const buttonTitle = currentStep === (QUESTIONS.length - 1) ? BUTTONS[1] : BUTTONS[0];
+  const buttonTitle = currentStep === QUESTIONS.length - 1 ? BUTTONS[1] : BUTTONS[0];
 
   return (
     <div className="test-container">
