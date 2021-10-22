@@ -4,33 +4,28 @@ import '../../../node_modules/rc-steps/assets/index.css';
 import { QUESTIONS, BUTTONS } from '../../constants/skinTest';
 
 export const Test = () => {
-  const [curentStep, setCount] = useState(0);
-  const [curentButton, setButton] = useState(0);
+  const [currentStep, setCount] = useState(0);
 
-  const results = () => {
-    setButton(1);
-  };
   const nextStep = () => {
-    if (curentStep === (QUESTIONS.length - 1)) {
-      results();
-    } else {
-      setCount(curentStep + 1);
+    if (currentStep !== (QUESTIONS.length - 1)) {
+      setCount(currentStep + 1);
     }
   };
   const previousStep = () => {
-    if (curentStep === 0) {
+    if (currentStep === 0) {
       setCount(3);
     } else {
-      setCount(curentStep - 1);
+      setCount(currentStep - 1);
     }
   };
-  const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === curentStep);
+  const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === currentStep);
+  const buttonTitle = currentStep === (QUESTIONS.length - 1) ? BUTTONS[1] : BUTTONS[0];
 
   return (
     <div className="test-container">
-      <Steps current={curentStep} className="stepper">
+      <Steps current={currentStep} className="stepper">
         {QUESTIONS.map((item) => (
-          <Steps.Step key={item.key} title={item.steptitle} className="step" />
+          <Steps.Step key={item.key} title={item.stepTitle} className="step" />
         ))}
       </Steps>
       <div className="test-question-parent">
@@ -45,7 +40,7 @@ export const Test = () => {
         </div>
         <div className="test-buttons">
           <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
-          <button className="test-button" type="button" onClick={nextStep}>{BUTTONS[curentButton]}</button>
+          <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
         </div>
       </div>
     </div>
