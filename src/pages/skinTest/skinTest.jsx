@@ -1,14 +1,14 @@
-import React, { setState, useState } from 'react';
+import React, { useState } from 'react';
 import Steps from 'rc-steps';
 import '../../../node_modules/rc-steps/assets/index.css';
-import { QUESTIONS, BUTTON } from '../../constants/skintest';
+import { QUESTIONS, BUTTONS } from '../../constants/skinTest';
 
 export const Test = () => {
   const [curentStep, setCount] = useState(0);
-  const [curentButton, change] = useState(0);
+  const [curentButton, setButton] = useState(0);
 
   const results = () => {
-    change(1);
+    setButton(1);
   };
   const nextStep = () => {
     if (curentStep === (QUESTIONS.length - 1)) {
@@ -24,7 +24,7 @@ export const Test = () => {
       setCount(curentStep - 1);
     }
   };
-  const curentQuestion = QUESTIONS.find((curQuestion) => curQuestion.step === curentStep);
+  const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === curentStep);
 
   return (
     <div className="test-container">
@@ -34,9 +34,9 @@ export const Test = () => {
         ))}
       </Steps>
       <div className="test-question-parent">
-        <div className="test-question">{curentQuestion.question}</div>
+        <div className="test-question">{question}</div>
         <div className="test-answers">
-          {curentQuestion.answers.map((item) => (
+          {answers.map((item) => (
             <div className="test-answer">
               <input type="checkbox" />
               {item}
@@ -45,7 +45,7 @@ export const Test = () => {
         </div>
         <div className="test-buttons">
           <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
-          <button className="test-button" type="button" onClick={nextStep}>{BUTTON[curentButton]}</button>
+          <button className="test-button" type="button" onClick={nextStep}>{BUTTONS[curentButton]}</button>
         </div>
       </div>
     </div>

@@ -28,4 +28,7 @@ export const QUESTIONS = [
     answers: ['3Lorem, ipsum dolor.', 'Lorem, ipsum dolor.', 'Lorem, ipsum dolor.'],
   },
 ];
-export const BUTTON = ['Next step', 'Submit'];
+export const BUTTONS = {
+  0: 'Next step',
+  1: 'Submit',
+};

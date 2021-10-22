@@ -1,2 +1,2 @@
 export * from './home/Home';
-export * from './skinTest/skinTest';
+export * from './skinTest/SkinTest';
