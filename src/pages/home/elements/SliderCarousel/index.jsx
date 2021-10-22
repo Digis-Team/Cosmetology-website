@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { slides, CAROUSEL_INTERVAL, CAROUSEL_TRANSITION_TIME } from '../../../constants';
+import { slides, CAROUSEL_INTERVAL, CAROUSEL_TRANSITION_TIME } from '../../../../constants';
 
 export const SliderCarousel = () => (
   <div className="slider-carousel-slider-container">

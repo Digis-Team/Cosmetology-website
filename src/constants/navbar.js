@@ -6,7 +6,7 @@ export const MENU_ITEMS = [
   },
   {
     title: 'Services',
-    url: '/',
+    url: '/test',
     className: 'nav-links',
   },
   {

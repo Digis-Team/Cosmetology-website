@@ -1,5 +1,5 @@
 import React from 'react';
-import { ABOUT_ME_ICONS, BUTTON_LINK } from '../../../constants';
+import { ABOUT_ME_ICONS, BUTTON_LINK } from '../../../../constants';
 
 export const AboutMe = () => (
   <div className="about-me-container">
