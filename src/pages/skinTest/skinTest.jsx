@@ -5,6 +5,7 @@ import { QUESTIONS, BUTTONS } from '../../constants/skinTest';
 
 export const Test = () => {
   const [currentStep, setCount] = useState(0);
+  const currentResult = [];
 
   const nextStep = () => {
     if (currentStep !== (QUESTIONS.length - 1)) {
@@ -21,20 +22,35 @@ export const Test = () => {
   const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === currentStep);
   const buttonTitle = currentStep === QUESTIONS.length - 1 ? BUTTONS[1] : BUTTONS[0];
 
+  const onChange = (event) => {
+    // answers[event.target.value].checked = event.target.checked;
+    // console.log(answers[event.target.value].checked);
+    // answers.forEach(() => {
+    //   if (answers.checked) {
+    //     console.log('checked');
+    //   } else {
+    //     console.log('not checked');
+    //   }
+    // });
+    currentResult.push(event.target.value);
+    // console.log(event.target.checked);
+    console.log(currentResult);
+  };
+
   return (
     <div className="test-container">
       <Steps current={currentStep} className="stepper">
         {QUESTIONS.map((item) => (
-          <Steps.Step key={item.key} title={item.stepTitle} className="step" />
+          <Steps.Step key={item.key} className="step" />
         ))}
       </Steps>
-      <div className="test-question-parent">
+      <form className="test-question-parent">
         <div className="test-question">{question}</div>
         <div className="test-answers">
           {answers.map((item) => (
             <div className="test-answer">
-              <input type="checkbox" />
-              {item}
+              <input type="checkbox" value={item.value} onClick={onChange} />
+              {item.title}
             </div>
           ))}
         </div>
@@ -42,7 +58,7 @@ export const Test = () => {
           <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
           <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

@@ -48,3 +48,8 @@
   color: #776464;
   background: #E9CAC4;
 }
+.rc-steps-item-finish .rc-steps-item-icon {
+  border-color: #d8aea5;
+  background-color: rgb(187, 25, 25);
+  color: #d8aea5;
+}
