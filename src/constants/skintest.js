@@ -6,26 +6,22 @@ export const QUESTIONS = [
     question: 'What is tour skin type?',
     answers: [
       {
+        id: '1',
         title: '1Lorem, ipsum dolor.',
         value: 1,
-        checked: true,
       },
       {
+        id: '2',
         title: '1Lorem, ipsum dolor.',
         value: 2,
-        checked: false,
       },
       {
+        id: '3',
         title: '1Lorem, ipsum dolor.',
         value: 3,
-        checked: false,
       },
     ],
   },
-  // answers.checked = event.target.checked;
-  //   console.log(answers.checked);
-  //   currentResult.push(event.target.value);
-  //   console.log(currentResult);
   {
     key: 2,
     step: 1,
@@ -33,19 +29,19 @@ export const QUESTIONS = [
     question: '2What is tour skin type?',
     answers: [
       {
+        id: '1',
         title: '2Lorem, ipsum dolor.',
         value: 1,
-        checked: false,
       },
       {
+        id: '2',
         title: '2Lorem, ipsum dolor.',
         value: 2,
-        checked: false,
       },
       {
+        id: '3',
         title: '3Lorem, ipsum dolor.',
         value: 3,
-        checked: false,
       },
     ],
   },
@@ -56,19 +52,19 @@ export const QUESTIONS = [
     question: '3What is tour skin type?',
     answers: [
       {
+        id: '1',
         title: '3Lorem, ipsum dolor.',
         value: 1,
-        checked: false,
       },
       {
+        id: '2',
         title: '3Lorem, ipsum dolor.',
         value: 2,
-        checked: false,
       },
       {
+        id: '3',
         title: '3Lorem, ipsum dolor.',
         value: 3,
-        checked: false,
       },
     ],
   },
@@ -79,19 +75,19 @@ export const QUESTIONS = [
     question: '4What is tour skin type?',
     answers: [
       {
+        id: '1',
         title: '4Lorem, ipsum dolor.',
         value: 1,
-        checked: false,
       },
       {
+        id: '2',
         title: '4Lorem, ipsum dolor.',
         value: 2,
-        checked: false,
       },
       {
+        id: '3',
         title: '4Lorem, ipsum dolor.',
         value: 3,
-        checked: false,
       },
     ],
   },

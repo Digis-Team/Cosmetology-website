@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import Steps from 'rc-steps';
 import '../../../node_modules/rc-steps/assets/index.css';
-import { QUESTIONS, BUTTONS } from '../../constants/skinTest';
+import { QUESTIONS, BUTTONS } from '../../constants';
 
-export const Test = () => {
+export const SkinTest = () => {
   const [currentStep, setCount] = useState(0);
-  const currentResult = [];
+  const [currentResult, setResult] = useState([]);
+  const [currentArr, setArr] = useState([]);
 
   const nextStep = () => {
     if (currentStep !== (QUESTIONS.length - 1)) {
       setCount(currentStep + 1);
+      const newArr = currentResult.concat(currentArr);
+      setResult(newArr);
+      console.log(currentResult);
+    } else {
+      const newArr = currentResult.concat(currentArr);
+      setResult(newArr);
+      console.log(currentResult);
     }
   };
   const previousStep = () => {
@@ -23,20 +31,13 @@ export const Test = () => {
   const buttonTitle = currentStep === QUESTIONS.length - 1 ? BUTTONS[1] : BUTTONS[0];
 
   const onChange = (event) => {
-    // answers[event.target.value].checked = event.target.checked;
-    // console.log(answers[event.target.value].checked);
-    // answers.forEach(() => {
-    //   if (answers.checked) {
-    //     console.log('checked');
-    //   } else {
-    //     console.log('not checked');
-    //   }
-    // });
-    currentResult.push(event.target.value);
-    // console.log(event.target.checked);
-    console.log(currentResult);
+    setArr((old) => ({
+      ...old,
+      resId: event.target.id,
+      resValue: parseInt(event.target.value, 10),
+    }));
   };
-
+  console.log(currentArr);
   return (
     <div className="test-container">
       <Steps current={currentStep} className="stepper">
@@ -49,7 +50,7 @@ export const Test = () => {
         <div className="test-answers">
           {answers.map((item) => (
             <div className="test-answer">
-              <input type="checkbox" value={item.value} onClick={onChange} />
+              <input type="checkbox" id={item.id} value={item.value} onChange={onChange} checked={currentArr.resId === item.id} />
               {item.title}
             </div>
           ))}
