@@ -2,7 +2,6 @@ export const QUESTIONS = [
   {
     key: 1,
     step: 0,
-    stepTitle: 'first',
     question: 'What is tour skin type?',
     answers: [
       {
@@ -25,7 +24,6 @@ export const QUESTIONS = [
   {
     key: 2,
     step: 1,
-    stepTitle: 'second',
     question: '2What is tour skin type?',
     answers: [
       {
@@ -48,7 +46,6 @@ export const QUESTIONS = [
   {
     key: 3,
     step: 2,
-    stepTitle: 'third',
     question: '3What is tour skin type?',
     answers: [
       {
@@ -71,7 +68,6 @@ export const QUESTIONS = [
   {
     key: 4,
     step: 3,
-    stepTitle: 'fourth',
     question: '4What is tour skin type?',
     answers: [
       {

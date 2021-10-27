@@ -6,19 +6,15 @@ import { QUESTIONS, BUTTONS } from '../../constants';
 export const SkinTest = () => {
   const [currentStep, setCount] = useState(0);
   const [currentResult, setResult] = useState([]);
-  const [currentArr, setArr] = useState([]);
+  const [currentArr, setArr] = useState({});
 
   const nextStep = () => {
     if (currentStep !== (QUESTIONS.length - 1)) {
       setCount(currentStep + 1);
-      const newArr = currentResult.concat(currentArr);
-      setResult(newArr);
-      console.log(currentResult);
-    } else {
-      const newArr = currentResult.concat(currentArr);
-      setResult(newArr);
-      console.log(currentResult);
     }
+    const newArr = [...currentResult, currentArr];
+    setResult(newArr);
+    console.log(currentResult);
   };
   const previousStep = () => {
     if (currentStep === 0) {
@@ -45,11 +41,11 @@ export const SkinTest = () => {
           <Steps.Step key={item.key} className="step" />
         ))}
       </Steps>
-      <form className="test-question-parent">
-        <div className="test-question">{question}</div>
+      <div className="test-question-parent">
+        <div key={QUESTIONS.key} className="test-question">{question}</div>
         <div className="test-answers">
           {answers.map((item) => (
-            <div className="test-answer">
+            <div key={item.id} className="test-answer">
               <input type="checkbox" id={item.id} value={item.value} onChange={onChange} checked={currentArr.resId === item.id} />
               {item.title}
             </div>
@@ -59,7 +55,7 @@ export const SkinTest = () => {
           <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
           <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

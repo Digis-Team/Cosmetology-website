@@ -20,7 +20,7 @@ export const NavBar = () => {
       </div>
       <ul className={`nav-menu ${isClicked ? 'active' : ''}`}>
         {MENU_ITEMS.map((item) => (
-          <li>
+          <li key={item.key}>
             <Link className={item.className} to={item.url}>
               {item.title}
             </Link>
