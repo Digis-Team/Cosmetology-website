@@ -40,7 +40,7 @@ export const SkinTest = () => {
         ))}
       </Steps>
       <div className="test-question-parent">
-        <div key={QUESTIONS.key} className="test-question">{question}</div>
+        <div key={QUESTIONS.id} className="test-question">{question}</div>
         <div className="test-answers">
           {answers.map((item) => (
             <div key={item.id} className="test-answer">

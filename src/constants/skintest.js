@@ -1,6 +1,6 @@
 export const QUESTIONS = [
   {
-    key: 1,
+    id: 1,
     step: 0,
     question: 'What is tour skin type?',
     answers: [
@@ -22,7 +22,7 @@ export const QUESTIONS = [
     ],
   },
   {
-    key: 2,
+    id: 2,
     step: 1,
     question: '2What is tour skin type?',
     answers: [
@@ -44,7 +44,7 @@ export const QUESTIONS = [
     ],
   },
   {
-    key: 3,
+    id: 3,
     step: 2,
     question: '3What is tour skin type?',
     answers: [
@@ -66,7 +66,7 @@ export const QUESTIONS = [
     ],
   },
   {
-    key: 4,
+    id: 4,
     step: 3,
     question: '4What is tour skin type?',
     answers: [
