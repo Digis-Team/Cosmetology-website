@@ -11,7 +11,7 @@ export const BeforeAfter = () => (
     <h1 className="before-after-text">Before/After</h1>
     <div className="before-after-slider-parent">
       {BEFORE_AFTER_PICTURES.map((item) => (
-        <div className="before-after-slider">
+        <div className="before-after-slider" key={item.id}>
           <ReactCompareSlider
             className="before-after-photos"
             itemOne={<ReactCompareSliderImage src={item.before} alt="before" />}

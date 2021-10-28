@@ -13,7 +13,7 @@ export const AboutMe = () => (
     </div>
     <div className="about-me-icons">
       {ABOUT_ME_ICONS.map((item) => (
-        <div className="about-me-icon">
+        <div className="about-me-icon" key={item.id}>
           <a href={item.href} className="icon-link">
             <i className={item.iconClass} />
           </a>
