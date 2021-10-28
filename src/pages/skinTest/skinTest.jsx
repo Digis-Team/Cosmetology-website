@@ -16,11 +16,11 @@ export const SkinTest = () => {
     setObj({});
   };
   const previousStep = () => {
-    if (currentStep === 0) {
-      setCount(QUESTIONS.length - 1);
-    } else {
+    if (currentStep !== 0) {
       setCount(currentStep - 1);
+      currentResult.splice(-1);
     }
+    setObj({});
   };
   const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === currentStep);
   const buttonTitle = currentStep === QUESTIONS.length - 1 ? BUTTONS[1] : BUTTONS[0];
@@ -36,11 +36,11 @@ export const SkinTest = () => {
     <div className="test-container">
       <Steps current={currentStep} className="stepper">
         {QUESTIONS.map((item) => (
-          <Steps.Step key={item.key} className="step" />
+          <Steps.Step key={item.id} className="step" />
         ))}
       </Steps>
-      <div className="test-question-parent">
-        <div key={QUESTIONS.id} className="test-question">{question}</div>
+      <div key={QUESTIONS.id} className="test-question-parent">
+        <div className="test-question">{question}</div>
         <div className="test-answers">
           {answers.map((item) => (
             <div key={item.id} className="test-answer">
@@ -51,7 +51,7 @@ export const SkinTest = () => {
         </div>
         <div className="test-buttons">
           <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
-          <button className="test-button" type="submit" onClick={nextStep}>{buttonTitle}</button>
+          <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
         </div>
       </div>
     </div>
