@@ -6,17 +6,21 @@ export const SkinTest = () => {
   const [currentStep, setCount] = useState(0);
   const [currentResult, setResult] = useState([]);
   const [currentObj, setObj] = useState({});
+  const [boolResult, setRes] = useState(false);
+  const [points, setPoints] = useState();
 
   const nextStep = () => {
     if (currentStep !== (QUESTIONS.length - 1)) {
       setCount(currentStep + 1);
     } else {
-      currentResult.reduce((sum, curr) => sum + curr.resValue, 0);
+      setPoints(currentResult.reduce((sum, curr) => sum + curr.resValue, 0));
+      setRes(true);
     }
     const newArr = [...currentResult, currentObj];
     setResult(newArr);
     setObj({});
   };
+
   const previousStep = () => {
     if (currentStep !== 0) {
       setCount(currentStep - 1);
@@ -36,12 +40,12 @@ export const SkinTest = () => {
   };
   return (
     <div className="test-container">
-      <Steps current={currentStep} className="stepper">
+      <Steps current={currentStep} className="stepper" style={{ display: boolResult ? 'none' : 'inlineBlock' }}>
         {QUESTIONS.map((item) => (
           <Steps.Step key={item.id} className="step" />
         ))}
       </Steps>
-      <div className="test-question-parent">
+      <div className="test-question-parent" style={{ display: boolResult ? 'none' : 'inlineBlock' }}>
         <div className="test-question">{question}</div>
         <div className="test-answers">
           {answers.map((item) => (
@@ -55,6 +59,10 @@ export const SkinTest = () => {
           <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
           <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
         </div>
+      </div>
+      <div className="result">
+        results:
+        {points}
       </div>
     </div>
   );
