@@ -10,10 +10,8 @@ export const SkinTest = () => {
   const nextStep = () => {
     if (currentStep !== (QUESTIONS.length - 1)) {
       setCount(currentStep + 1);
-      // console.log(currentResult[currentStep].resValue);
     } else {
-      const result = currentResult.reduce((sum, curr) => sum + curr.resValue, 0);
-      console.log(result);
+      currentResult.reduce((sum, curr) => sum + curr.resValue, 0);
     }
     const newArr = [...currentResult, currentObj];
     setResult(newArr);
@@ -36,7 +34,6 @@ export const SkinTest = () => {
       resValue: Number(event.target.value),
     }));
   };
-  console.log(currentResult);
   return (
     <div className="test-container">
       <Steps current={currentStep} className="stepper">
