@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home, Test } from './pages';
+import { Home, SkinTest } from './pages';
 import { NavBar } from './elements';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/test">
-          <Test />
+          <SkinTest />
         </Route>
       </Switch>
     </Router>

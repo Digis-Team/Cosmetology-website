@@ -7,19 +7,19 @@ import after3 from '../theme/assets/after3.jpg';
 
 export const BEFORE_AFTER_PICTURES = [
   {
-    key: 1,
+    id: 1,
     before: before1,
     after: after1,
     text: 'Home care',
   },
   {
-    key: 2,
+    id: 2,
     before: before2,
     after: after2,
     text: 'Conical plastic',
   },
   {
-    key: 3,
+    id: 3,
     before: before3,
     after: after3,
     text: 'Home care',

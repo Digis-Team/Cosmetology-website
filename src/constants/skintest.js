@@ -1,31 +1,91 @@
 export const QUESTIONS = [
   {
-    key: 1,
+    id: 1,
     step: 0,
-    stepTitle: 'first',
     question: 'What is tour skin type?',
-    answers: ['Lorem, ipsum dolor.', 'Lorem, ipsum dolor.', 'Lorem, ipsum dolor.'],
+    answers: [
+      {
+        id: '1',
+        title: '1Lorem, ipsum dolor.',
+        value: 1,
+      },
+      {
+        id: '2',
+        title: '1Lorem, ipsum dolor.',
+        value: 2,
+      },
+      {
+        id: '3',
+        title: '1Lorem, ipsum dolor.',
+        value: 3,
+      },
+    ],
   },
   {
-    key: 2,
+    id: 2,
     step: 1,
-    stepTitle: 'second',
     question: '2What is tour skin type?',
-    answers: ['1Lorem, ipsum dolor.', 'Lorem, ipsum dolor.', 'Lorem, ipsum dolor.'],
+    answers: [
+      {
+        id: '1',
+        title: '2Lorem, ipsum dolor.',
+        value: 1,
+      },
+      {
+        id: '2',
+        title: '2Lorem, ipsum dolor.',
+        value: 2,
+      },
+      {
+        id: '3',
+        title: '3Lorem, ipsum dolor.',
+        value: 3,
+      },
+    ],
   },
   {
-    key: 3,
+    id: 3,
     step: 2,
-    stepTitle: 'third',
     question: '3What is tour skin type?',
-    answers: ['L2orem, ipsum dolor.', 'Lorem, ipsum dolor.', 'Lorem, ipsum dolor.'],
+    answers: [
+      {
+        id: '1',
+        title: '3Lorem, ipsum dolor.',
+        value: 1,
+      },
+      {
+        id: '2',
+        title: '3Lorem, ipsum dolor.',
+        value: 2,
+      },
+      {
+        id: '3',
+        title: '3Lorem, ipsum dolor.',
+        value: 3,
+      },
+    ],
   },
   {
-    key: 4,
+    id: 4,
     step: 3,
-    stepTitle: 'fourth',
     question: '4What is tour skin type?',
-    answers: ['3Lorem, ipsum dolor.', 'Lorem, ipsum dolor.', 'Lorem, ipsum dolor.'],
+    answers: [
+      {
+        id: '1',
+        title: '4Lorem, ipsum dolor.',
+        value: 1,
+      },
+      {
+        id: '2',
+        title: '4Lorem, ipsum dolor.',
+        value: 2,
+      },
+      {
+        id: '3',
+        title: '4Lorem, ipsum dolor.',
+        value: 3,
+      },
+    ],
   },
 ];
 export const BUTTONS = {

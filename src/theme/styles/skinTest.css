@@ -48,3 +48,26 @@
   color: #776464;
   background: #E9CAC4;
 }
+.rc-steps-item-process .rc-steps-item-icon > .rc-steps-icon .rc-steps-icon-dot,
+.rc-steps-item-process .rc-steps-item-icon,
+.rc-steps-item-finish .rc-steps-item-icon > .rc-steps-icon .rc-steps-icon-dot,
+.rc-steps-item-finish .rc-steps-item-title:after,
+.rc-steps-item-finish .rc-steps-item-tail:after {
+background:#d8aea5 ;
+}
+.rc-steps-navigation .rc-steps-item-active .rc-steps-item-container {
+  border-bottom: 3px solid #d8aea5;
+}
+.rc-steps-item-custom.rc-steps-item-process .rc-steps-item-icon > .rc-steps-icon,
+.rc-steps-item-finish .rc-steps-item-icon,
+.rc-steps-item-icon > .rc-steps-icon,
+.rc-steps-item-process .rc-steps-item-icon > .rc-steps-icon {
+  color: #d8aea5;
+}
+.rc-steps-item-finish .rc-steps-item-icon,
+.rc-steps-item-process .rc-steps-item-icon {
+  border-color: #d8aea5;
+}
+.checkbox{
+ margin-right: 5px;
+}
