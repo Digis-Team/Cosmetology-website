@@ -40,7 +40,7 @@ export const Questions = ({ setPoints }) => {
     }));
   };
   return (
-    <div className="test-container" style={{ display: boolResult ? 'none' : 'inlineBlock' }}>
+    <div className={!boolResult ? 'test-container' : 'hidden'}>
       <Steps current={currentStep} className="stepper">
         {QUESTIONS.map((item) => (
           <Steps.Step key={item.id} className="step" />
@@ -64,4 +64,3 @@ export const Questions = ({ setPoints }) => {
     </div>
   );
 };
-// style={{ display: boolResult ? 'none' : 'inlineBlock' }}
