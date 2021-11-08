@@ -86,7 +86,6 @@ background:#d8aea5 ;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 .results {
   height: 50%;
@@ -100,4 +99,7 @@ background:#d8aea5 ;
   justify-content: space-around;
   text-align: center;
   white-space: pre-wrap;
+}
+.hidden {
+  display: none;
 }

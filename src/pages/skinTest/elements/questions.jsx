@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Steps from 'rc-steps';
 import { QUESTIONS, BUTTONS } from '../../../constants';
 
-// export const point = points;
-
 // eslint-disable-next-line react/prop-types
 export const Questions = ({ setPoints }) => {
   const [currentStep, setCount] = useState(0);
