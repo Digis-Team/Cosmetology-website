@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import Steps from 'rc-steps';
 import { QUESTIONS, BUTTONS } from '../../../constants';
 
-// eslint-disable-next-line react/prop-types
 export const Questions = ({ setPoints }) => {
   const [currentStep, setCount] = useState(0);
   const [currentResult, setResult] = useState([]);
   const [currentObj, setObj] = useState({});
-  const [boolResult, setRes] = useState(false);
 
   const nextStep = () => {
     const newArr = [...currentResult, currentObj];
@@ -18,7 +16,6 @@ export const Questions = ({ setPoints }) => {
     } else {
       const res = newArr.reduce((sum, curr) => sum + curr.resValue, 0);
       setPoints(res);
-      setRes(true);
     }
   };
 
@@ -29,6 +26,7 @@ export const Questions = ({ setPoints }) => {
     }
     setObj({});
   };
+
   const { question, answers } = QUESTIONS.find((curQuestion) => curQuestion.step === currentStep);
   const buttonTitle = currentStep === QUESTIONS.length - 1 ? BUTTONS[1] : BUTTONS[0];
 
@@ -40,7 +38,7 @@ export const Questions = ({ setPoints }) => {
     }));
   };
   return (
-    <div className={!boolResult ? 'test-container' : 'hidden'}>
+    <div className="test-container">
       <Steps current={currentStep} className="stepper">
         {QUESTIONS.map((item) => (
           <Steps.Step key={item.id} className="step" />
