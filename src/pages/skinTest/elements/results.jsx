@@ -7,7 +7,7 @@ export const Results = (props) => {
       <div className="results">
         <h1>RESULTS</h1>
         <h1>
-          {points.points}
+          { points.points }
         </h1>
         <div className="explanation-container">
           <div className="res-points-container">
