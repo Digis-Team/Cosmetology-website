@@ -1,3 +1,6 @@
+html {
+  overflow: hidden;
+}
 .test-container {
   position: relative;
   padding-top: 90px;
@@ -6,7 +9,7 @@
   align-items: center;
   flex-direction: column;
   width: 70%;
-  height: 70vh;
+  height: 100vh;
   justify-content: space-around;
 }
 .test-question-parent {
@@ -14,11 +17,12 @@
   border-radius: 15px;
   background: cornsilk;
   width: 80%;
-  height: 80%;
+  height: 60%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  margin-bottom: 50px;
 }
 .test-question {
  text-align: center;
@@ -70,4 +74,32 @@ background:#d8aea5 ;
 }
 .checkbox{
  margin-right: 5px;
+}
+.result-container {
+  background: rgb(243, 221, 221);
+  position: relative;
+  margin-top: 300px;
+  padding-top: 90px;
+  margin: auto;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.results {
+  height: 50%;
+  width: 70%;
+  border: solid 5px rgb(173, 157, 157);
+  border-radius: 10px;
+  background: #F3E4E1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  white-space: pre-wrap;
+}
+.hidden {
+  display: none;
 }
