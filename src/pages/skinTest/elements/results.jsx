@@ -3,7 +3,6 @@ import React from 'react';
 export const Results = (props) => {
   const points = props;
   return (
-    // className="result-container"
     <div className={points.points === 0 ? 'hidden' : 'result-container'}>
       <div className="results">
         <h1>RESULTS</h1>
