@@ -8,12 +8,6 @@ export const Questions = ({ setPoints }) => {
   const [currentResult, setResult] = useState([]);
   const [currentObj, setObj] = useState({});
 
-  Questions.propTypes = {
-    setPoints: propTypes.func,
-  };
-  Questions.defaultProps = {
-    setPoints: () => {},
-  };
   const nextStep = () => {
     const newArr = [...currentResult, currentObj];
     setResult(newArr);
@@ -68,4 +62,7 @@ export const Questions = ({ setPoints }) => {
       </div>
     </div>
   );
+};
+Questions.propTypes = {
+  setPoints: propTypes.func.isRequired,
 };
