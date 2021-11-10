@@ -14,7 +14,7 @@ export const MENU_ITEMS = [
   {
     id: 3,
     title: 'Products',
-    url: '/',
+    url: '/shop',
     className: 'nav-links',
   },
 ];
