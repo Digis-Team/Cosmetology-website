@@ -5,7 +5,6 @@ export const SHOP_ITEMS = [
     title: 'fruit',
     description: 'Very delicious fruit, juicy',
     price: '100$',
-    button: 'Add to card',
     section: 'СИРОВАТКИ',
   },
   {
@@ -14,7 +13,6 @@ export const SHOP_ITEMS = [
     title: 'fruit2',
     description: 'Very delicious fruit, juicy',
     price: '100$',
-    button: 'Add to card',
     section: 'ЗВОЛОЖЕННЯ',
   },
 ];

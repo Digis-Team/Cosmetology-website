@@ -1,6 +1,6 @@
 import React from 'react';
 import { SHOP_ITEMS, SECTIONS } from '../../constants';
-
+// const { section } = SHOP_ITEMS.find((item) => item.section === SECTIONS.title);
 export const Shop = () => (
   <div className="shop-container">
     <div className="items-list-container">
@@ -30,9 +30,7 @@ export const Shop = () => (
               {item.price}
             </span>
           </div>
-          <button type="button" className="item-button">
-            {item.button}
-          </button>
+          <button type="button" className="item-button">Add to cart</button>
         </div>
       ))}
     </div>
