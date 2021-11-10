@@ -1,18 +1,13 @@
 import React from 'react';
-import { SHOP_ITEMS } from '../../constants';
+import { SHOP_ITEMS, SECTIONS } from '../../constants';
 
 export const Shop = () => (
   <div className="shop-container">
     <div className="items-list-container">
       <ul className="items-list-parent">
-        <li className="items-list">СИРОВАТКИ</li>
-        <li className="items-list">ЗВОЛОЖЕННЯ</li>
-        <li className="items-list">ПЕПТИДИ</li>
-        <li className="items-list">СОНЦЕЗАХИСТ</li>
-        <li className="items-list">ОЧИЩЕННЯ</li>
-        <li className="items-list">ВІДЛУЩУВАННЯ</li>
-        <li className="items-list">ТОНІКИ</li>
-        <li className="items-list">МАСКИ</li>
+        {SECTIONS.map((item) => (
+          <li key={item.id} className="items-list">{item.title}</li>
+        ))}
       </ul>
       <a href="https://www.google.com/" className="cart">
         <i className="fas fa-shopping-cart fa-3x " />
@@ -29,7 +24,7 @@ export const Shop = () => (
               {item.title}
             </span>
             <span className="item-desc">
-              {item.desc}
+              {item.description}
             </span>
             <span className="item-price">
               {item.price}
