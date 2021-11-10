@@ -16,7 +16,7 @@
 .items-list {
   border-radius: 2px;
   padding: 10px;
- padding-left: 15px;
+  padding-left: 15px;
 }
 .items-list:hover {
   background: rgb(226, 224, 224);
@@ -43,7 +43,6 @@
 .res-explanation-container {
   display: flex;
   justify-content: space-around;
-  
 }
 .items-container {
   margin-top: 80px;
