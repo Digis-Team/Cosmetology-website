@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { SHOP_ITEMS, SECTIONS } from '../../constants';
 
 export const Shop = () => {
-  const [currentsection, setSection] = useState(1);
-  const SHOP_ITEMS1 = SHOP_ITEMS.filter((el) => el.section === currentsection);
+  const [currentSection, setCurrentSection] = useState(SECTIONS[0].id);
+
+  const sectionItems = SHOP_ITEMS.filter((el) => el.section === currentSection);
+
   const checkSection = (sectionId) => {
-    setSection(sectionId);
+    setCurrentSection(sectionId);
   };
+
   return (
     <div className="shop-container">
       <div className="items-list-container">
@@ -20,7 +23,7 @@ export const Shop = () => {
         </a>
       </div>
       <div className="items-container">
-        {SHOP_ITEMS1.map((item) => (
+        {sectionItems.map((item) => (
           <div className="item-container" key={item.id}>
             <div className="item-img-container">
               <img className="item-img" src={item.img} alt={item.title} section={currentsection} />
