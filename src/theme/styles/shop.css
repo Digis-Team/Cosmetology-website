@@ -47,14 +47,13 @@
 .items-container {
   margin-top: 80px;
   color: white;
-}
-.items-container {
   width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .item-container {
+  margin: 3px;
   background-color: rgb(216, 195, 191);
   width: 250px;
   height: 350px;
