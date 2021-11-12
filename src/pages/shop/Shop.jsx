@@ -26,7 +26,7 @@ export const Shop = () => {
         {sectionItems.map((item) => (
           <div className="item-container" key={item.id}>
             <div className="item-img-container">
-              <img className="item-img" src={item.img} alt={item.title} section={currentsection} />
+              <img className="item-img" src={item.img} alt={item.title} section={currentSection} />
             </div>
             <div className="item-desc-container">
               <span className="item-title">
