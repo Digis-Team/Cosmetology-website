@@ -3,20 +3,19 @@ import { SHOP_ITEMS, SECTIONS } from '../../constants';
 
 export const Shop = () => {
   const [currentSection, setCurrentSection] = useState(SECTIONS[0].id);
-  const sectionItems = SHOP_ITEMS.filter((el) => el.section === currentSection);
   const [amountOfItems, setAmountOfItems] = useState();
-  let cartList = JSON.parse(localStorage.getItem('cartList'));
+
+  const sectionItems = SHOP_ITEMS.filter((el) => el.section === currentSection);
+  const cartList = JSON.parse(localStorage.getItem('cartList')) === null ? [] : JSON.parse(localStorage.getItem('cartList'));
 
   const checkSection = (sectionId) => {
     setCurrentSection(sectionId);
   };
-  const AddItemToCart = (itemId) => {
-    cartList = cartList || [];
-    cartList.push(itemId);
-    localStorage.setItem('cartList', JSON.stringify(cartList));
-    setAmountOfItems(Math.floor(localStorage.getItem('cartList').length / 2));
+  const addItemToCart = (itemId) => {
+    const newList = [...cartList, itemId];
+    localStorage.setItem('cartList', JSON.stringify(newList));
+    setAmountOfItems([...cartList, itemId].length);
   };
-
   return (
     <div className="shop-container">
       <div className="items-list-container">
@@ -49,7 +48,7 @@ export const Shop = () => {
                 {item.price}
               </span>
             </div>
-            <button type="button" className="item-button" onClick={() => AddItemToCart(item.id)}>Add to cart</button>
+            <button type="button" className="item-button" onClick={() => addItemToCart(item.id)}>Add to cart</button>
           </div>
         ))}
       </div>
