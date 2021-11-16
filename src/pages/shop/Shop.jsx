@@ -12,8 +12,7 @@ export const Shop = () => {
     setCurrentSection(sectionId);
   };
   const addItemToCart = (itemId) => {
-    const newList = [...cartList, itemId];
-    localStorage.setItem('cartList', JSON.stringify(newList));
+    localStorage.setItem('cartList', JSON.stringify([...cartList, itemId]));
     setAmountOfItems([...cartList, itemId].length);
   };
   return (
