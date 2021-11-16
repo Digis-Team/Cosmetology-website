@@ -3,11 +3,18 @@ import { SHOP_ITEMS, SECTIONS } from '../../constants';
 
 export const Shop = () => {
   const [currentSection, setCurrentSection] = useState(SECTIONS[0].id);
-
   const sectionItems = SHOP_ITEMS.filter((el) => el.section === currentSection);
+  const [amountOfItems, setAmountOfItems] = useState();
+  let cartList = JSON.parse(localStorage.getItem('cartList'));
 
   const checkSection = (sectionId) => {
     setCurrentSection(sectionId);
+  };
+  const AddItemToCart = (itemId) => {
+    cartList = cartList || [];
+    cartList.push(itemId);
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+    setAmountOfItems(Math.floor(localStorage.getItem('cartList').length / 2));
   };
 
   return (
@@ -19,7 +26,10 @@ export const Shop = () => {
           ))}
         </ul>
         <a href="https://www.google.com/" className="cart">
-          <i className="fas fa-shopping-cart fa-3x " />
+          <span>
+            <i className="fas fa-shopping-cart fa-3x " />
+            <span>{amountOfItems}</span>
+          </span>
         </a>
       </div>
       <div className="items-container">
@@ -39,7 +49,7 @@ export const Shop = () => {
                 {item.price}
               </span>
             </div>
-            <button type="button" className="item-button">Add to cart</button>
+            <button type="button" className="item-button" onClick={() => AddItemToCart(item.id)}>Add to cart</button>
           </div>
         ))}
       </div>
