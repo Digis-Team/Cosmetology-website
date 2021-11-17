@@ -1,15 +1,16 @@
 .shop-container {
-  height: 100vh;
-  width: 100vw;
+  height: max-content;
+  width: 100%;
   background: rgb(92, 75, 75);
-  display: flex;
+  display: inline-block;
 }
 .items-list-container {
   width: 25%;
   margin-top: 80px;
   height: 100%;
   background: rgb(247, 245, 245);
-  display: flex;
+  position: fixed;
+  display: flex ;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -46,15 +47,20 @@
   justify-content: space-around;
 }
 .items-container {
+  position: relative;
+  right: 0;
   margin-top: 80px;
   color: white;
   width: 75%;
+  height: max-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  float: right;
+  align-items: center;
 }
 .item-container {
-  margin: 3px;
+  margin: 5px;
   background-color: rgb(216, 195, 191);
   width: 250px;
   height: 350px;
@@ -68,6 +74,9 @@
 }
 .item-img {
   width: 100%;
+}
+.items-list {
+  list-style-type: none;
 }
 .item-desc-container {
   height: 20%;
@@ -88,4 +97,23 @@
   .items-list-container {
     margin-top: 0;
   }
+  .items-list-container {
+    position: relative;
+  }
+  .shop-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .items-list-container {
+    flex-direction: row;
+    width: 100%;
+  }
+  .items-list-parent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .items-container {
+    width: 100%;
+  }
+  
 }
