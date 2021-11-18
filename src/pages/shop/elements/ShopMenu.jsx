@@ -6,11 +6,13 @@ export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
   const checkSection = (sectionId) => {
     setCurrentSection(sectionId);
   };
+  const { id, title } = SECTIONS;
+  const onClick = () => checkSection(id);
   return (
     <div className="items-list-container">
       <ul className="items-list-parent">
-        {SECTIONS.map((item) => (
-          <li role="presentation" key={item.id} className="items-list" onClick={() => checkSection(item.id)} onKeyDown={() => checkSection(item.id)}>{item.title}</li>
+        {SECTIONS.map(() => (
+          <li role="presentation" key={id} className="items-list" onClick={onClick} onKeyDown={onClick}>{title}</li>
         ))}
       </ul>
       <a href="https://www.google.com/" className="cart">
@@ -22,6 +24,7 @@ export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
     </div>
   );
 };
+
 ShopMenu.propTypes = {
   setCurrentSection: propTypes.func.isRequired,
   amountOfItems: propTypes.number.isRequired,
