@@ -4,13 +4,7 @@ import { SHOP_ITEMS } from '../../../constants';
 
 export const ShopItems = ({ setAmountOfItems, currentSection }) => {
   const cartList = JSON.parse(localStorage.getItem('cartList')) === null ? [] : JSON.parse(localStorage.getItem('cartList'));
-  const {
-    id,
-    img,
-    title,
-    description,
-    price,
-  } = SHOP_ITEMS.filter((el) => el.section === currentSection);
+  const section = SHOP_ITEMS.filter((el) => el.section === currentSection);
 
   const addItemToCart = (itemId) => {
     const newList = [...cartList, itemId];
@@ -20,25 +14,34 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
 
   return (
     <div className="items-container">
-      {SHOP_ITEMS.map(() => (
-        <div className="item-container" key={id}>
-          <div className="item-img-container">
-            <img className="item-img" src={img} alt={title} />
+      {section.map((item) => {
+        const {
+          id,
+          img,
+          title,
+          description,
+          price,
+        } = item;
+        return (
+          <div className="item-container" key={id}>
+            <div className="item-img-container">
+              <img className="item-img" src={img} alt={title} />
+            </div>
+            <div className="item-desc-container">
+              <span className="item-title">
+                {title}
+              </span>
+              <span className="item-desc">
+                {description}
+              </span>
+              <span className="item-price">
+                {price}
+              </span>
+            </div>
+            <button type="button" className="item-button" onClick={() => addItemToCart(id)}>Add to cart</button>
           </div>
-          <div className="item-desc-container">
-            <span className="item-title">
-              {title}
-            </span>
-            <span className="item-desc">
-              {description}
-            </span>
-            <span className="item-price">
-              {price}
-            </span>
-          </div>
-          <button type="button" className="item-button" onClick={() => addItemToCart(id)}>Add to cart</button>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

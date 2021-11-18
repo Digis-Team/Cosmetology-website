@@ -4,7 +4,7 @@ import { SECTIONS } from '../../constants';
 
 export const Shop = () => {
   const [currentSection, setCurrentSection] = useState(SECTIONS[0].id);
-  const [amountOfItems, setAmountOfItems] = useState();
+  const [amountOfItems, setAmountOfItems] = useState(0);
 
   return (
     <div className="shop-container">
