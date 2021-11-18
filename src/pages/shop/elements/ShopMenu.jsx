@@ -12,8 +12,9 @@ export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
       <ul className="items-list-parent">
         {SECTIONS.map((item) => {
           const { id, title } = item;
+          const onClick = () => checkSection(id);
           return (
-            <li role="presentation" key={id} className="items-list" onClick={() => checkSection(id)} onKeyDown={() => checkSection(id)}>{title}</li>
+            <li role="presentation" key={id} className="items-list" onClick={() => onClick()} onKeyDown={() => onClick()}>{title}</li>
           );
         })}
       </ul>
