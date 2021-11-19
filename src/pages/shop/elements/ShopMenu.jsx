@@ -3,15 +3,14 @@ import propTypes from 'prop-types';
 import { SECTIONS } from '../../../constants';
 
 export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
-  const onClick = (id) => function checkSection() {
-    setCurrentSection(id);
-  };
+  const onClick = (id) => () => setCurrentSection(id);
 
   return (
     <div className="items-list-container">
       <ul className="items-list-parent">
-        {SECTIONS.map((item) => {
-          const { id, title } = item;
+        {SECTIONS.map((section) => {
+          const { id, title } = section;
+
           return (
             <li role="presentation" key={id} className="items-list" onClick={onClick(id)} onKeyDown={onClick(id)}>{title}</li>
           );

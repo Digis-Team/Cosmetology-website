@@ -3,8 +3,8 @@ import propTypes from 'prop-types';
 import { SHOP_ITEMS } from '../../../constants';
 
 export const ShopItems = ({ setAmountOfItems, currentSection }) => {
-  const cartList = JSON.parse(localStorage.getItem('cartList')) === null ? [] : JSON.parse(localStorage.getItem('cartList'));
-  const section = SHOP_ITEMS.filter((el) => el.section === currentSection);
+  const cartList = JSON.parse(localStorage.getItem('cartList')) ? JSON.parse(localStorage.getItem('cartList')) : [];
+  const section = SHOP_ITEMS.find((product) => product.section === currentSection);
 
   const addItemToCart = (itemId) => {
     const newList = [...cartList, itemId];
@@ -22,6 +22,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
           description,
           price,
         } = item;
+
         return (
           <div className="item-container" key={id}>
             <div className="item-img-container">
