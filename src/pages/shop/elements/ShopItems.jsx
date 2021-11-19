@@ -6,8 +6,8 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
   const cartList = JSON.parse(localStorage.getItem('cartList')) ? JSON.parse(localStorage.getItem('cartList')) : [];
   const sectionProducts = SHOP_ITEMS.filter((product) => product.section === currentSection);
 
-  const addItemToCart = (itemId) => {
-    const newList = [...cartList, itemId];
+  const addItemToCart = (cartItem) => {
+    const newList = [...cartList, cartItem];
     localStorage.setItem('cartList', JSON.stringify(newList));
     setAmountOfItems(newList.length);
   };
@@ -36,7 +36,18 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
               {price}
             </span>
           </div>
-          <button type="button" className="item-button" onClick={() => addItemToCart(id)}>Add to cart</button>
+          <button
+            type="button"
+            className="item-button"
+            onClick={() => addItemToCart({
+              id,
+              img,
+              title,
+              price,
+            })}
+          >
+            Add to cart
+          </button>
         </div>
       ))}
     </div>
