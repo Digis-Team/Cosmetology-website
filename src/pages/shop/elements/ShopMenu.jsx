@@ -8,13 +8,9 @@ export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
   return (
     <div className="items-list-container">
       <ul className="items-list-parent">
-        {SECTIONS.map((section) => {
-          const { id, title } = section;
-
-          return (
-            <li role="presentation" key={id} className="items-list" onClick={onClick(id)} onKeyDown={onClick(id)}>{title}</li>
-          );
-        })}
+        {SECTIONS.map(({ id, title }) => (
+          <li role="presentation" key={id} className="items-list" onClick={onClick(id)} onKeyDown={onClick(id)}>{title}</li>
+        ))}
       </ul>
       <a href="https://www.google.com/" className="cart">
         <span>
