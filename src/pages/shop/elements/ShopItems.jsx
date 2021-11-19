@@ -40,10 +40,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
             type="button"
             className="item-button"
             onClick={() => addItemToCart({
-              id,
-              img,
-              title,
-              price,
+              id, img, title, price,
             })}
           >
             Add to cart
