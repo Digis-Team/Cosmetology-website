@@ -8,7 +8,7 @@ export const CartPage = () => {
 
   return (
     <div className="cartlist-container">
-      <h1 className="zagolovok">{CART}</h1>
+      <h1 className="headine">{CART}</h1>
       <div className="cart-items-container">
         {cartItems.map(({
           id, img, title, price,
