@@ -1,12 +1,14 @@
 import React from 'react';
-import { BUTTONS_NAMES } from '../../constants';
+import {
+  CART, DELETE_ITEM, DELETE_ALL_ITEMS, MAKE_ORDER,
+} from '../../constants';
 
 export const CartPage = () => {
   const cartItems = JSON.parse(localStorage.getItem('cartList'));
 
   return (
     <div className="cartlist-container">
-      <h1 className="zagolovok">Корзина</h1>
+      <h1 className="zagolovok">{CART}</h1>
       <div className="cart-items-container">
         {cartItems.map(({
           id, img, title, price,
@@ -21,18 +23,18 @@ export const CartPage = () => {
                   {price}
                 </div>
                 <div className="amount-container">
-                  <button className="cart-button" type="button">{BUTTONS_NAMES[0]}</button>
+                  <button className="cart-button" type="button">-</button>
                   <span className="amount">1</span>
-                  <button className="cart-button" type="button">{BUTTONS_NAMES[1]}</button>
+                  <button className="cart-button" type="button">+</button>
                 </div>
-                <button className="cart-button delete-item" type="button">{BUTTONS_NAMES[2]}</button>
+                <button className="cart-button delete-item" type="button">{DELETE_ITEM}</button>
               </div>
             </div>
           </div>
         ))}
         <div className="make-order">
-          <button className="cart-button" type="button">{BUTTONS_NAMES[3]}</button>
-          <button className="cart-button" type="button">{BUTTONS_NAMES[4]}</button>
+          <button className="cart-button" type="button">{DELETE_ALL_ITEMS}</button>
+          <button className="cart-button" type="button">{MAKE_ORDER}</button>
         </div>
       </div>
     </div>

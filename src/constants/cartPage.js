@@ -1,7 +1,4 @@
-export const BUTTONS_NAMES = {
-  0: '-',
-  1: '+',
-  2: 'Видалити товар',
-  3: 'Видалити все',
-  4: 'Створити замовлення',
-};
+export const CART = 'Корзина';
+export const DELETE_ITEM = 'Видалити товар';
+export const DELETE_ALL_ITEMS = 'Видалити все';
+export const MAKE_ORDER = 'Створити замовлення';
