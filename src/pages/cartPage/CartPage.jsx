@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {
+  CART_TITLE, DELETE_ITEM_TITLE, DELETE_ALL_ITEMS_TITLE, MAKE_ORDER_TITLE,
+} from '../../constants';
 
 export const CartPage = () => {
   const [, setForceUpdate] = useState({});
@@ -18,7 +21,7 @@ export const CartPage = () => {
 
   return (
     <div className="cartlist-container">
-      <h1 className="zagolovok">Корзина</h1>
+      <h1 className="headine">{CART_TITLE}</h1>
       <div className="cart-items-container">
         {cartList.map(({
           id, title, img, price, amount,
@@ -37,14 +40,14 @@ export const CartPage = () => {
                   <span className="amount">{amount}</span>
                   <button className="cart-button" type="button" onClick={() => changeAmount(id, '+')}>+</button>
                 </div>
-                <button className="cart-button delete-item" type="button">Видалити товар</button>
+                <button className="cart-button delete-item" type="button">{DELETE_ITEM_TITLE}</button>
               </div>
             </div>
           </div>
         ))}
         <div className="make-order">
-          <button className="cart-button" type="button">Видалити все</button>
-          <button className="cart-button" type="button">Створити замовлення</button>
+          <button className="cart-button" type="button">{DELETE_ALL_ITEMS_TITLE}</button>
+          <button className="cart-button" type="button">{MAKE_ORDER_TITLE}</button>
         </div>
       </div>
     </div>
