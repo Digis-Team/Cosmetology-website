@@ -1,8 +1,8 @@
 import React from 'react';
+import { BUTTONS_NAMES } from '../../constants';
 
 export const CartPage = () => {
   const cartItems = JSON.parse(localStorage.getItem('cartList'));
-  const returnButton = (value) => <button className="cart-button" type="button">{value}</button>;
 
   return (
     <div className="cartlist-container">
@@ -21,18 +21,18 @@ export const CartPage = () => {
                   {price}
                 </div>
                 <div className="amount-container">
-                  {returnButton('-')}
+                  <button className="cart-button" type="button">{BUTTONS_NAMES[0]}</button>
                   <span className="amount">1</span>
-                  {returnButton('+')}
+                  <button className="cart-button" type="button">{BUTTONS_NAMES[1]}</button>
                 </div>
-                {returnButton('Видалити товар')}
+                <button className="cart-button delete-item" type="button">{BUTTONS_NAMES[2]}</button>
               </div>
             </div>
           </div>
         ))}
         <div className="make-order">
-          {returnButton('Видалити всу')}
-          {returnButton('Створити замовлення')}
+          <button className="cart-button" type="button">{BUTTONS_NAMES[3]}</button>
+          <button className="cart-button" type="button">{BUTTONS_NAMES[4]}</button>
         </div>
       </div>
     </div>
