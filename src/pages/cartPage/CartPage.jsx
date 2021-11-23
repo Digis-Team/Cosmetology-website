@@ -10,9 +10,9 @@ export const CartPage = () => {
   const changeAmount = (id, sign) => {
     const changedItemIndex = cartList.findIndex((item) => item.id === id);
     const changedItem = cartList[changedItemIndex];
-    if (sign === '+') {
+    if (sign === 'plus') {
       changedItem.amount += 1;
-    } else if (sign === '-') {
+    } else {
       changedItem.amount -= 1;
     }
     localStorage.setItem('cartList', JSON.stringify(cartList));
@@ -36,9 +36,9 @@ export const CartPage = () => {
                   {price}
                 </div>
                 <div className="amount-container">
-                  <button className="cart-button" type="button" onClick={() => changeAmount(id, '-')}>-</button>
+                  <button className="cart-button" type="button" onClick={() => changeAmount(id, 'minus')}>-</button>
                   <span className="amount">{amount}</span>
-                  <button className="cart-button" type="button" onClick={() => changeAmount(id, '+')}>+</button>
+                  <button className="cart-button" type="button" onClick={() => changeAmount(id, 'plus')}>+</button>
                 </div>
                 <button className="cart-button delete-item" type="button">{DELETE_ITEM_TITLE}</button>
               </div>
