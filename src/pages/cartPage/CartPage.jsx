@@ -2,33 +2,37 @@ import React from 'react';
 
 export const CartPage = () => {
   const cartItems = JSON.parse(localStorage.getItem('cartList'));
+  const returnButton = (value) => <button className="cart-button" type="button">{value}</button>;
+
   return (
     <div className="cartlist-container">
       <h1 className="zagolovok">Корзина</h1>
       <div className="cart-items-container">
-        {cartItems.map((cartItem) => (
-          <div className="cart-item" key={cartItem.id}>
-            <img className="cart-img" src={cartItem.img} alt="item" />
+        {cartItems.map(({
+          id, img, title, price,
+        }) => (
+          <div className="cart-item" key={id}>
+            <img className="cart-img" src={img} alt="item" />
             <div className="item-description">
-              <h3 className="item-name">{cartItem.title}</h3>
+              <h3 className="item-name">{title}</h3>
               <div className="price-amount">
                 <div className="price">
                   <span>Price: $</span>
-                  {cartItem.price}
+                  {price}
                 </div>
                 <div className="amount-container">
-                  <button className="cart-button" type="button">-</button>
+                  {returnButton('-')}
                   <span className="amount">1</span>
-                  <button className="cart-button" type="button">+</button>
+                  {returnButton('+')}
                 </div>
-                <button className="cart-button delete-item" type="button">Видалити товар</button>
+                {returnButton('Видалити товар')}
               </div>
             </div>
           </div>
         ))}
         <div className="make-order">
-          <button className="cart-button" type="button">Видалити все</button>
-          <button className="cart-button" type="button">Створити замовлення</button>
+          {returnButton('Видалити всу')}
+          {returnButton('Створити замовлення')}
         </div>
       </div>
     </div>
