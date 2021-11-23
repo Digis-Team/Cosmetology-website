@@ -6,6 +6,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    amount: 1,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    amount: 1,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    amount: 1,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    amount: 1,
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    amount: 1,
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    amount: 1,
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    amount: 1,
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    amount: 1,
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    amount: 1,
   },
 ];
 export const SECTIONS = [

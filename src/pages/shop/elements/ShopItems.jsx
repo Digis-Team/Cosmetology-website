@@ -3,13 +3,25 @@ import propTypes from 'prop-types';
 import { SHOP_ITEMS } from '../../../constants';
 
 export const ShopItems = ({ setAmountOfItems, currentSection }) => {
-  const cartList = JSON.parse(localStorage.getItem('cartList')) ? JSON.parse(localStorage.getItem('cartList')) : [];
   const sectionProducts = SHOP_ITEMS.filter((product) => product.section === currentSection);
 
   const addItemToCart = (cartItem) => {
-    const newList = [...cartList, cartItem];
-    localStorage.setItem('cartList', JSON.stringify(newList));
-    setAmountOfItems(newList.length);
+    const cartList = JSON.parse(localStorage.getItem('cartList')) ? JSON.parse(localStorage.getItem('cartList')) : [];
+    const repeatedItemIndex = cartList.findIndex((item) => item.id === cartItem.id);
+    const repeatedItem = cartList[repeatedItemIndex];
+    const countAmount = (list) => {
+      const amount = list.reduce((sum, item) => sum + item.amount, 0);
+      setAmountOfItems(amount);
+    };
+    if (repeatedItem) {
+      repeatedItem.amount += 1;
+      localStorage.setItem('cartList', JSON.stringify(cartList));
+      countAmount(cartList);
+    } else {
+      const newList = [...cartList, cartItem];
+      localStorage.setItem('cartList', JSON.stringify(newList));
+      countAmount(newList);
+    }
   };
 
   return (
@@ -20,6 +32,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
         title,
         description,
         price,
+        amount,
       }) => (
         <div className="item-container" key={id}>
           <div className="item-img-container">
@@ -40,7 +53,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
             type="button"
             className="item-button"
             onClick={() => addItemToCart({
-              id, img, title, price,
+              id, img, title, price, amount,
             })}
           >
             Add to cart

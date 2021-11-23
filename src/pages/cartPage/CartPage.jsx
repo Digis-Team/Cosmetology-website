@@ -1,25 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const CartPage = () => {
-  const cartItems = JSON.parse(localStorage.getItem('cartList'));
+  const [, setForceUpdate] = useState({});
+  const cartList = JSON.parse(localStorage.getItem('cartList'));
+
+  const changeAmount = (id, sign) => {
+    const changedItemIndex = cartList.findIndex((item) => item.id === id);
+    const changedItem = cartList[changedItemIndex];
+    if (sign === '+') {
+      changedItem.amount += 1;
+    } else if (sign === '-') {
+      changedItem.amount -= 1;
+    }
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+    setForceUpdate({});
+  };
+
   return (
     <div className="cartlist-container">
       <h1 className="zagolovok">Корзина</h1>
       <div className="cart-items-container">
-        {cartItems.map((cartItem) => (
-          <div className="cart-item" key={cartItem.id}>
-            <img className="cart-img" src={cartItem.img} alt="item" />
+        {cartList.map(({
+          id, title, img, price, amount,
+        }) => (
+          <div className="cart-item" key={id}>
+            <img className="cart-img" src={img} alt="item" />
             <div className="item-description">
-              <h3 className="item-name">{cartItem.title}</h3>
+              <h3 className="item-name">{title}</h3>
               <div className="price-amount">
                 <div className="price">
                   <span>Price: $</span>
-                  {cartItem.price}
+                  {price}
                 </div>
                 <div className="amount-container">
-                  <button className="cart-button" type="button">-</button>
-                  <span className="amount">1</span>
-                  <button className="cart-button" type="button">+</button>
+                  <button className="cart-button" type="button" onClick={() => changeAmount(id, '-')}>-</button>
+                  <span className="amount">{amount}</span>
+                  <button className="cart-button" type="button" onClick={() => changeAmount(id, '+')}>+</button>
                 </div>
                 <button className="cart-button delete-item" type="button">Видалити товар</button>
               </div>
