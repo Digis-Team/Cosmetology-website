@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  CART, DELETE_ITEM, DELETE_ALL_ITEMS, MAKE_ORDER,
+  CART_TITLE, DELETE_ITEM_TITLE, DELETE_ALL_ITEMS_TITLE, MAKE_ORDER_TITLE,
 } from '../../constants';
 
 export const CartPage = () => {
@@ -8,7 +8,7 @@ export const CartPage = () => {
 
   return (
     <div className="cartlist-container">
-      <h1 className="headine">{CART}</h1>
+      <h1 className="headine">{CART_TITLE}</h1>
       <div className="cart-items-container">
         {cartItems.map(({
           id, img, title, price,
@@ -27,14 +27,14 @@ export const CartPage = () => {
                   <span className="amount">1</span>
                   <button className="cart-button" type="button">+</button>
                 </div>
-                <button className="cart-button delete-item" type="button">{DELETE_ITEM}</button>
+                <button className="cart-button delete-item" type="button">{DELETE_ITEM_TITLE}</button>
               </div>
             </div>
           </div>
         ))}
         <div className="make-order">
-          <button className="cart-button" type="button">{DELETE_ALL_ITEMS}</button>
-          <button className="cart-button" type="button">{MAKE_ORDER}</button>
+          <button className="cart-button" type="button">{DELETE_ALL_ITEMS_TITLE}</button>
+          <button className="cart-button" type="button">{MAKE_ORDER_TITLE}</button>
         </div>
       </div>
     </div>
