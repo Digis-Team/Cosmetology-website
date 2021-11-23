@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { SECTIONS } from '../../../constants';
 
 export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
@@ -12,12 +13,12 @@ export const ShopMenu = ({ setCurrentSection, amountOfItems }) => {
           <li role="presentation" key={id} className="items-list" onClick={onClick(id)} onKeyDown={onClick(id)}>{title}</li>
         ))}
       </ul>
-      <a href="https://www.google.com/" className="cart">
+      <Link to="/cart" className="cart">
         <span>
           <i className="fas fa-shopping-cart fa-3x " />
           {amountOfItems > 0 && <span>{amountOfItems}</span>}
         </span>
-      </a>
+      </Link>
     </div>
   );
 };
