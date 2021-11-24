@@ -14,8 +14,24 @@ export const CartPage = () => {
       changedItem.amount += 1;
     } else {
       changedItem.amount -= 1;
+      if (changedItem.amount === 0) {
+        cartList.splice(changedItemIndex, 1);
+      }
     }
     localStorage.setItem('cartList', JSON.stringify(cartList));
+    setForceUpdate({});
+  };
+
+  const deleteProduct = (id) => {
+    const changedItemIndex = cartList.findIndex((item) => item.id === id);
+    cartList.splice(changedItemIndex, 1);
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+    setForceUpdate({});
+  };
+
+  const deleteAllItems = () => {
+    const emptyCart = [];
+    localStorage.setItem('cartList', JSON.stringify(emptyCart));
     setForceUpdate({});
   };
 
@@ -40,13 +56,13 @@ export const CartPage = () => {
                   <span className="amount">{amount}</span>
                   <button className="cart-button" type="button" onClick={() => changeAmount(id, 'plus')}>+</button>
                 </div>
-                <button className="cart-button delete-item" type="button">{DELETE_ITEM_TITLE}</button>
+                <button className="cart-button delete-item" type="button" onClick={() => deleteProduct(id)}>{DELETE_ITEM_TITLE}</button>
               </div>
             </div>
           </div>
         ))}
         <div className="make-order">
-          <button className="cart-button" type="button">{DELETE_ALL_ITEMS_TITLE}</button>
+          <button className="cart-button" type="button" onClick={() => deleteAllItems()}>{DELETE_ALL_ITEMS_TITLE}</button>
           <button className="cart-button" type="button">{MAKE_ORDER_TITLE}</button>
         </div>
       </div>
