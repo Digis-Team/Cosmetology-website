@@ -25,6 +25,6 @@ export const ABOUT_ME_ICONS = [
   },
 ];
 export const BUTTON_LINK = 'https://www.google.com/';
-export const ABOUT_ME_TEXT = 'Лікар-косметолог з 5-річним стажем та медичною освітою. Запишіться на безкоштовну консультацію або пройдіть онлайн тест на визначення необхідного догляду за шкірою';
-export const ABOUT_ME = 'About me';
-export const SEE_MORE_TEXT = 'See more';
+export const ABOUT_ME_DESCRIPTION = 'Лікар-косметолог з 5-річним стажем та медичною освітою. Запишіться на безкоштовну консультацію або пройдіть онлайн тест на визначення необхідного догляду за шкірою';
+export const ABOUT_ME_TITLE = 'About me';
+export const SEE_MORE_TITLE = 'See more';
