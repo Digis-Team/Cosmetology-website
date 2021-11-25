@@ -62,3 +62,33 @@
 .amount {
   margin: 5px;
 }
+.confirmation-container {
+  padding-top: 80px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F3E4E1;
+}
+.confirmation {
+  background:#D3B7B2;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+}
+.return {
+  padding: 20px;
+  font-size: large;
+  border-radius: 10px;
+  background: #F3E4E1;
+  text-decoration: none;
+  color: #776464;
+}
+.headline {
+  color: #776464;
+}
