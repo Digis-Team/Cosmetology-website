@@ -1,15 +1,15 @@
 import React from 'react';
 import {
-  ABOUT_ME_ICONS, BUTTON_LINK, ABOUT_ME_TEXT, SEE_MORE_TEXT, ABOUT_ME,
+  ABOUT_ME_ICONS, BUTTON_LINK, ABOUT_ME_TITLE, SEE_MORE_TITLE, ABOUT_ME_DESCRIPTION,
 } from '../../../../constants';
 
 export const AboutMe = () => (
   <div className="about-me-container">
     <div className="about-me-line" />
     <div className="about-me-text-parent">
-      <h1>{ABOUT_ME}</h1>
+      <h1>{ABOUT_ME_TITLE}</h1>
     </div>
-    <div className="about-me-paragraph">{ABOUT_ME_TEXT}</div>
+    <div className="about-me-paragraph">{ABOUT_ME_DESCRIPTION}</div>
     <div className="about-me-icons">
       {ABOUT_ME_ICONS.map((item) => (
         <div className="about-me-icon" key={item.id}>
@@ -22,7 +22,7 @@ export const AboutMe = () => (
     </div>
     <button type="button" className="about-me-button">
       <a className="button-link" href={BUTTON_LINK}>
-        {SEE_MORE_TEXT}
+        {SEE_MORE_TITLE}
         <i className="fas fa-arrow-right" />
       </a>
     </button>
