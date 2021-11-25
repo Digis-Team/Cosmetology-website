@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 
 import {
-  CART_TITLE, DELETE_ITEM_TITLE, DELETE_ALL_ITEMS_TITLE, MAKE_ORDER_TITLE,
+  CART_TITLE, DELETE_ITEM_TITLE, DELETE_ALL_ITEMS_TITLE, MAKE_ORDER_TITLE, PRICE_TITLE,
 } from '../../../constants';
 
 export const CartItems = ({ setIsConfirmed }) => {
@@ -50,7 +50,7 @@ export const CartItems = ({ setIsConfirmed }) => {
               <h3 className="item-name">{title}</h3>
               <div className="price-amount">
                 <div className="price">
-                  <span>Price: $</span>
+                  <span>{PRICE_TITLE}</span>
                   {price}
                 </div>
                 <div className="amount-container">
