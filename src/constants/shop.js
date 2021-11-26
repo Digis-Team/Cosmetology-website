@@ -6,6 +6,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    skinSection: 1,
     amount: 1,
   },
   {
@@ -15,6 +16,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    skinSection: 1,
     amount: 1,
   },
   {
@@ -24,6 +26,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    skinSection: 2,
     amount: 1,
   },
   {
@@ -33,6 +36,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    skinSection: 1,
     amount: 1,
   },
   {
@@ -42,6 +46,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    skinSection: 2,
     amount: 1,
   },
   {
@@ -51,6 +56,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    skinSection: 3,
     amount: 1,
   },
   {
@@ -60,6 +66,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    skinSection: 1,
     amount: 1,
   },
   {
@@ -69,6 +76,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 1,
+    skinSection: 2,
     amount: 1,
   },
   {
@@ -78,6 +86,7 @@ export const SHOP_ITEMS = [
     description: 'Very delicious fruit, juicy',
     price: '100$',
     section: 2,
+    skinSection: 3,
     amount: 1,
   },
 ];
@@ -113,5 +122,19 @@ export const SECTIONS = [
   {
     id: 8,
     title: 'МАСКИ',
+  },
+];
+export const SKIN_SECTIONS = [
+  {
+    id: 1,
+    title: 'ЖИРНА ШКІРА',
+  },
+  {
+    id: 2,
+    title: 'НОРМАЛЬНА ШКІРА',
+  },
+  {
+    id: 3,
+    title: 'СУХА ШКІРА',
   },
 ];
