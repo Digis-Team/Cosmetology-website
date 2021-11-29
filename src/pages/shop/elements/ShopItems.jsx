@@ -26,13 +26,13 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
       countAmount(newList);
     }
   };
-  const onClick = (id) => () => setCurrentSkinSection(id);
+  const onSkinSectionClick = (id) => () => setCurrentSkinSection(id);
   return (
     <div className="section-items-container">
       <div className="skin-sections-container">
         <ul className="skin-sections">
           {SKIN_SECTIONS.map(({ id, title }) => (
-            <li role="presentation" className="skin-section" key={id} onClick={onClick(id)} onKeyDown={onClick(id)}>{title}</li>
+            <li role="presentation" className="skin-section" key={id} onClick={onSkinSectionClick(id)} onKeyDown={onSkinSectionClick(id)}>{title}</li>
           ))}
         </ul>
       </div>
