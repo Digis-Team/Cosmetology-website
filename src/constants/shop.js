@@ -127,7 +127,7 @@ export const SECTIONS = [
 export const SKIN_SECTIONS = [
   {
     id: 1,
-    title: 'ЖИРНА ШКІРА',
+    title: 'СУХА ШКІРА',
   },
   {
     id: 2,
@@ -135,6 +135,6 @@ export const SKIN_SECTIONS = [
   },
   {
     id: 3,
-    title: 'СУХА ШКІРА',
+    title: 'ЖИРНА ШКІРА',
   },
 ];

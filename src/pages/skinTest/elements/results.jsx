@@ -1,7 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-export const Results = ({ points }) => (
+// function useQuery() {
+//   const { search } = useLocation();
+
+//   return React.useMemo(() => new URLSearchParams(search), [search]);
+// }
+
+export const Results = ({ points, link }) => (
   <div className="result-container">
     <div className="results">
       <h1>RESULTS</h1>
@@ -20,9 +27,19 @@ export const Results = ({ points }) => (
           <div className="res-explanation">OIL</div>
         </div>
       </div>
+      <Link to={link}>{link}</Link>
+      <div>
+        {/* {
+        // eslint-disable-next-line quotes
+        query.get("section")
+        } */}
+      </div>
     </div>
   </div>
 );
+
 Results.propTypes = {
   points: propTypes.number.isRequired,
+  link: propTypes.string.isRequired,
+
 };

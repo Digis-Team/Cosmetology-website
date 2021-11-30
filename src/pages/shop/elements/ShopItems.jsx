@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 import {
   SHOP_ITEMS, SKIN_SECTIONS,
 } from '../../../constants';
 
+function useQuery() {
+  const { search } = useLocation();
+
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 export const ShopItems = ({ setAmountOfItems, currentSection }) => {
-  const [currentSkinSection, setCurrentSkinSection] = useState(SKIN_SECTIONS[0].id);
+  const query = useQuery();
+  const [currentSkinSection, setCurrentSkinSection] = useState(query.get('section') ? Number(query.get('section')) : SKIN_SECTIONS[0].id);
   const sectionProducts = SHOP_ITEMS.filter((product) => product.section === currentSection
   && product.skinSection === currentSkinSection);
 
