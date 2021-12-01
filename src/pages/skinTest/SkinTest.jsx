@@ -17,7 +17,9 @@ export const SkinTest = () => {
     }
     return link;
   };
+
   const link = checkSectionFromPoins();
+
   return points === 0 ? <Questions setPoints={setPoints} />
     : <Results points={points} link={link} />;
 };
