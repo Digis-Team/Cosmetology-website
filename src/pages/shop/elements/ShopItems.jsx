@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
+import useQuery from '../../../hooks/useQuery';
 import {
   SHOP_ITEMS, SKIN_SECTIONS,
 } from '../../../constants';
-
-function useQuery() {
-  const { search } = useLocation();
-
-  return React.useMemo(() => new URLSearchParams(search), [search]);
-}
 
 export const ShopItems = ({ setAmountOfItems, currentSection }) => {
   const query = useQuery();

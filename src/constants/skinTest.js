@@ -92,3 +92,4 @@ export const BUTTONS = {
   0: 'Next step',
   1: 'Submit',
 };
+export const GO_TO_SHOP_TITLE = 'Buy daily care';
