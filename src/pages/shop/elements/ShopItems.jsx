@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
+import { api } from '../../../api';
 import useQuery from '../../../hooks/useQuery';
-import {
-  SHOP_ITEMS, SKIN_SECTIONS,
-} from '../../../constants';
+import { SKIN_SECTIONS } from '../../../constants';
 
 export const ShopItems = ({ setAmountOfItems, currentSection }) => {
   const query = useQuery();
+
+  const [sectionProducts, setSectionProducts] = useState([]);
   const [currentSkinSection, setCurrentSkinSection] = useState(query.get('section') ? Number(query.get('section')) : SKIN_SECTIONS[0].id);
-  const sectionProducts = SHOP_ITEMS.filter((product) => product.section === currentSection
-  && product.skinSection === currentSkinSection);
+
+  useEffect(() => {
+    api.getShopItems(`/?section=${currentSection}&skinsection=${currentSkinSection}`)
+      .then((result) => {
+        setSectionProducts(result);
+      });
+  }, [currentSkinSection, currentSection]);
 
   const countAmount = (list) => {
     localStorage.setItem('cartList', JSON.stringify(list));
@@ -29,32 +35,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
     }
   };
   const onSkinSectionClick = (id) => () => setCurrentSkinSection(id);
-  // const [data, setData] = useState();
-  const getData = () => {
-    fetch('http://localhost:3000/comments')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      //   fetch('/comments/1',
-      //     {
-      //       headers: {
-      //         'Content-Type': 'application/json',
-      //         Accept: 'application/json',
-      //       },
-      //     })
-      //     .then((response) => {
-      //       console.log(response);
-      //       return response.json();
-      //     })
-      //     .then((myJson) => {
-      //       console.log(myJson);
-      //       setData(myJson);
-      //       console.log(data);
-      });
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+
   return (
     <div className="section-items-container">
       <div className="skin-sections-container">
@@ -65,11 +46,6 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
         </ul>
       </div>
       <div className="items-container">
-        {/* <div className="App">
-          {
-            data && data.length > 0 && data.map((item) => <p>{item.about}</p>)
-           }
-        </div> */}
         {sectionProducts.map(({
           id,
           img,

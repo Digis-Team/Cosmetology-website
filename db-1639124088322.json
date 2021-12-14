@@ -91,101 +91,21 @@
       "amount": 1
     }
   ],
-  "questions": [
+  "posts": [
     {
       "id": 1,
-      "step": 0,
-      "question": "What is tour skin type?",
-      "answers": [
-        {
-          "id": "1",
-          "title": "1Lorem, ipsum dolor.",
-          "value": 1
-        },
-        {
-          "id": "2",
-          "title": "1Lorem, ipsum dolor.",
-          "value": 2
-        },
-        {
-          "id": "3",
-          "title": "1Lorem, ipsum dolor.",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "step": 1,
-      "question": "2What is tour skin type?",
-      "answers": [
-        {
-          "id": "1",
-          "title": "2Lorem, ipsum dolor.",
-          "value": 1
-        },
-        {
-          "id": "2",
-          "title": "2Lorem, ipsum dolor.",
-          "value": 2
-        },
-        {
-          "id": "3",
-          "title": "3Lorem, ipsum dolor.",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "step": 2,
-      "question": "3What is tour skin type?",
-      "answers": [
-        {
-          "id": "1",
-          "title": "3Lorem, ipsum dolor.",
-          "value": 1
-        },
-        {
-          "id": "2",
-          "title": "3Lorem, ipsum dolor.",
-          "value": 2
-        },
-        {
-          "id": "3",
-          "title": "3Lorem, ipsum dolor.",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "step": 3,
-      "question": "4What is tour skin type?",
-      "answers": [
-        {
-          "id": "1",
-          "title": "4Lorem, ipsum dolor.",
-          "value": 1
-        },
-        {
-          "id": "2",
-          "title": "4Lorem, ipsum dolor.",
-          "value": 2
-        },
-        {
-          "id": "3",
-          "title": "4Lorem, ipsum dolor.",
-          "value": 3
-        }
-      ]
+      "title": "json-server",
+      "author": "typicode"
     }
   ],
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
   "comments": [
-    { "id": 1, "body": "some comment", "postid": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postid": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }
