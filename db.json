@@ -7,8 +7,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 1,
-      "skinsection": 1,
-      "amount": 1
+      "skinsection": 1
     },
     {
       "id": 2,
@@ -17,8 +16,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 2,
-      "skinsection": 1,
-      "amount": 1
+      "skinsection": 1
     },
     {
       "id": 3,
@@ -27,8 +25,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 1,
-      "skinsection": 2,
-      "amount": 1
+      "skinsection": 2
     },
     {
       "id": 4,
@@ -37,8 +34,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 1,
-      "skinsection": 1,
-      "amount": 1
+      "skinsection": 1
     },
     {
       "id": 5,
@@ -47,8 +43,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 2,
-      "skinsection": 2,
-      "amount": 1
+      "skinsection": 2
     },
     {
       "id": 6,
@@ -57,8 +52,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 1,
-      "skinsection": 3,
-      "amount": 1
+      "skinsection": 3
     },
     {
       "id": 7,
@@ -67,8 +61,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 2,
-      "skinsection": 1,
-      "amount": 1
+      "skinsection": 1
     },
     {
       "id": 8,
@@ -77,8 +70,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 1,
-      "skinsection": 2,
-      "amount": 1
+      "skinsection": 2
     },
     {
       "id": 9,
@@ -87,8 +79,7 @@
       "description": "Very delicious fruit, juicy",
       "price": "100$",
       "section": 2,
-      "skinsection": 3,
-      "amount": 1
+      "skinsection": 3
     }
   ],
   "questions": [

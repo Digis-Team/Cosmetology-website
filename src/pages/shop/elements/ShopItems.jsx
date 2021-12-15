@@ -30,7 +30,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
       repeatedItem.amount += 1;
       countAmount(cartList);
     } else {
-      const newList = [...cartList, cartItem];
+      const newList = [...cartList, { ...cartItem, amount: 1 }];
       countAmount(newList);
     }
   };
@@ -52,7 +52,6 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
           title,
           description,
           price,
-          amount,
         }) => (
           <div className="item-container" key={id}>
             <div className="item-img-container">
@@ -73,7 +72,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
               type="button"
               className="item-button"
               onClick={() => addItemToCart({
-                id, img, title, price, amount,
+                id, img, title, price,
               })}
             >
               Add to cart
