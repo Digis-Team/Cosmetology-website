@@ -35,17 +35,7 @@ export const Questions = ({ setPoints }) => {
     setObj({});
   };
 
-  // useEffect(() => {
-  //   api.getQuestions(`/?step=${currentStep}`)
-  //     .then((result) => {
-  //       setQuestion(result[0].question);
-  //       setAnswers(result[0].answers);
-  //     });
-  // }, [currentStep]);
-
-  // const { question, answers } =
   const currentQuestion = questions.find((curQuestion) => curQuestion.step === currentStep);
-  // const { answers } = questions.find((curQuestion) => curQuestion.step === currentStep);
   const buttonTitle = currentStep === questions.length - 1 ? BUTTONS[1] : BUTTONS[0];
 
   const onChange = (event) => {
