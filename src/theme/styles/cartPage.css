@@ -92,3 +92,10 @@
 .headline {
   color: #776464;
 }
+.email {
+  width: 200px;
+  height: 25px;
+}
+.disabled-link {
+  pointer-events: none;
+}
