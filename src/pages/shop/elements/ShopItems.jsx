@@ -11,7 +11,7 @@ export const ShopItems = ({ setAmountOfItems, currentSection }) => {
   const [currentSkinSection, setCurrentSkinSection] = useState(query.get('section') ? Number(query.get('section')) : SKIN_SECTIONS[0].id);
 
   useEffect(() => {
-    api.getShopItems(`/?section=${currentSection}&skinsection=${currentSkinSection}`)
+    api.getShopItems(`?section=${currentSection}&skinsection=${currentSkinSection}`)
       .then((result) => {
         setSectionProducts(result);
       });
