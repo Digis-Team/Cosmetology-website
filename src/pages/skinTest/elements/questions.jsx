@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 import Steps from 'rc-steps';
 import { api } from '../../../api';
-import { BUTTONS, QUESTIONS } from '../../../constants';
+import { BUTTONS } from '../../../constants';
 
 export const Questions = ({ setPoints }) => {
   const [currentStep, setCount] = useState(0);
   const [currentResult, setResult] = useState([]);
   const [currentObj, setObj] = useState({});
   const [questions, setQuestions] = useState([]);
-  const [question, setQuestion] = useState();
-  const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
     api.getQuestions('')
@@ -37,15 +35,18 @@ export const Questions = ({ setPoints }) => {
     setObj({});
   };
 
-  useEffect(() => {
-    api.getQuestions(`/?step=${currentStep}`)
-      .then((result) => {
-        setQuestion(result[0].question);
-        setAnswers(result[0].answers);
-      });
-  }, [currentStep]);
+  // useEffect(() => {
+  //   api.getQuestions(`/?step=${currentStep}`)
+  //     .then((result) => {
+  //       setQuestion(result[0].question);
+  //       setAnswers(result[0].answers);
+  //     });
+  // }, [currentStep]);
 
-  const buttonTitle = currentStep === QUESTIONS.length - 1 ? BUTTONS[1] : BUTTONS[0];
+  // const { question, answers } =
+  const currentQuestion = questions.find((curQuestion) => curQuestion.step === currentStep);
+  // const { answers } = questions.find((curQuestion) => curQuestion.step === currentStep);
+  const buttonTitle = currentStep === questions.length - 1 ? BUTTONS[1] : BUTTONS[0];
 
   const onChange = (event) => {
     setObj((old) => ({
@@ -58,25 +59,29 @@ export const Questions = ({ setPoints }) => {
   return (
     <div className="test-container">
       <Steps current={currentStep} className="stepper">
-        {QUESTIONS.map((item) => (
+        {questions.map((item) => (
           <Steps.Step key={item.id} className="step" />
         ))}
       </Steps>
-      <div className="test-question-parent">
-        <div className="test-question">{question}</div>
-        <div className="test-answers">
-          {answers.map((item) => (
-            <div key={item.id} className="test-answer">
-              <input type="checkbox" className="checkbox" id={item.id} value={item.value} onChange={onChange} checked={currentObj.resId === item.id} />
-              {item.title}
+      {currentQuestion
+        ? (
+          <div className="test-question-parent">
+            <div className="test-question">{currentQuestion.question}</div>
+            <div className="test-answers">
+              {currentQuestion.answers.map((item) => (
+                <div key={item.id} className="test-answer">
+                  <input type="checkbox" className="checkbox" id={item.id} value={item.value} onChange={onChange} checked={currentObj.resId === item.id} />
+                  {item.title}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="test-buttons">
-          <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
-          <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
-        </div>
-      </div>
+            <div className="test-buttons">
+              <button className="test-button" type="button" onClick={previousStep}>Previous step</button>
+              <button className="test-button" type="button" onClick={nextStep}>{buttonTitle}</button>
+            </div>
+          </div>
+        )
+        : <div>Loading...</div>}
     </div>
   );
 };
