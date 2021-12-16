@@ -5,3 +5,5 @@ export const MAKE_ORDER_TITLE = 'Створити замовлення';
 export const THANK_YOU_TITLE = 'Введіть email';
 export const CONFIRM_EMAIL = 'Підтвердити';
 export const PRICE_TITLE = 'Price: $';
+export const GOOD_EMAIL_TITLE = 'Your email looks good!';
+export const BAD_EMAIL_TITLE = 'Please enter a valid email!';

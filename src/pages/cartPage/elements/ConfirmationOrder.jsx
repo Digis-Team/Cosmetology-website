@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
-import { THANK_YOU_TITLE, CONFIRM_EMAIL } from '../../../constants';
+import {
+  THANK_YOU_TITLE, CONFIRM_EMAIL, GOOD_EMAIL_TITLE, BAD_EMAIL_TITLE,
+} from '../../../constants';
 
 export const ConfirmationOrder = () => {
   const [message, setMessage] = useState('');
-  const [linkClass, setLinkClass] = useState('cart-button return disabled-link');
+  const [isEmailValid, setIsEmailValid] = useState(true);
 
   const emailRegex = /\S+@\S+\.\S+/;
 
-  const validation = (event) => {
+  const onChange = (event) => {
     const email = event.target.value;
     if (emailRegex.test(email)) {
-      setMessage('Your email looks good!');
-      setLinkClass('cart-button return');
+      setMessage(GOOD_EMAIL_TITLE);
+      setIsEmailValid(false);
     } else {
-      setMessage('Please enter a valid email!');
+      setMessage(BAD_EMAIL_TITLE);
+      setIsEmailValid(true);
     }
   };
 
@@ -25,13 +27,13 @@ export const ConfirmationOrder = () => {
         <h1 className="headline">{THANK_YOU_TITLE}</h1>
         <input
           className="email"
-          type="text"
+          type="email"
           required
-          placeholder="olia.valchak@gmail.com"
-          onChange={validation}
+          placeholder="name.username@gmail.com"
+          onChange={onChange}
         />
         <div>{message}</div>
-        <Link to="/" className={linkClass}>{CONFIRM_EMAIL}</Link>
+        <Link to="/" className={`cart-button return ${isEmailValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</Link>
       </div>
     </div>
   );
