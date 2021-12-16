@@ -6,7 +6,7 @@ import {
 
 export const ConfirmationOrder = () => {
   const [message, setMessage] = useState('');
-  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isEmailInValid, setIsEmailInValid] = useState(true);
 
   const emailRegex = /\S+@\S+\.\S+/;
 
@@ -14,10 +14,10 @@ export const ConfirmationOrder = () => {
     const email = event.target.value;
     if (emailRegex.test(email)) {
       setMessage(GOOD_EMAIL_TITLE);
-      setIsEmailValid(true);
+      setIsEmailInValid(false);
     } else {
       setMessage(BAD_EMAIL_TITLE);
-      setIsEmailValid(false);
+      setIsEmailInValid(true);
     }
   };
 
@@ -33,7 +33,7 @@ export const ConfirmationOrder = () => {
           onChange={onChange}
         />
         <div>{message}</div>
-        <Link to="/" className={`cart-button return ${isEmailValid ? '' : 'disabled-link'}`}>{CONFIRM_EMAIL}</Link>
+        <Link to="/" className={`cart-button return ${!isEmailInValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</Link>
       </div>
     </div>
   );
