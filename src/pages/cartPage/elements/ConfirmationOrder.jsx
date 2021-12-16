@@ -33,7 +33,7 @@ export const ConfirmationOrder = () => {
           onChange={onChange}
         />
         <div>{message}</div>
-        <Link to="/" className={`cart-button return ${!isEmailInValid ? '' : 'disabled-link'}`}>{CONFIRM_EMAIL}</Link>
+        <Link to="/" className={`cart-button return ${isEmailInValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</Link>
       </div>
     </div>
   );
