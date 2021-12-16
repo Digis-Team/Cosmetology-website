@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { api } from '../../../api';
+
 import {
   THANK_YOU_TITLE, CONFIRM_EMAIL, GOOD_EMAIL_TITLE, BAD_EMAIL_TITLE,
 } from '../../../constants';
@@ -7,12 +9,18 @@ import {
 export const ConfirmationOrder = () => {
   const [message, setMessage] = useState('');
   const [isEmailInValid, setIsEmailInValid] = useState(true);
+  const [userEmail, setUserEmail] = useState('');
 
   const emailRegex = /\S+@\S+\.\S+/;
 
+  const setOrderData = () => (
+    api.postOrders(userEmail)
+      .then((result) => console.log(result))
+  );
+
   const onChange = (event) => {
-    const email = event.target.value;
-    if (emailRegex.test(email)) {
+    setUserEmail(event.target.value);
+    if (emailRegex.test(userEmail)) {
       setMessage(GOOD_EMAIL_TITLE);
       setIsEmailInValid(false);
     } else {
@@ -33,7 +41,7 @@ export const ConfirmationOrder = () => {
           onChange={onChange}
         />
         <div>{message}</div>
-        <Link to="/" className={`cart-button return ${isEmailInValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</Link>
+        <Link to="/" onClick={setOrderData} className={`cart-button return ${isEmailInValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</Link>
       </div>
     </div>
   );

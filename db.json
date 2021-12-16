@@ -171,5 +171,61 @@
         }
       ]
     }
+  ],
+  "orders": [
+    {
+      "userMail": "olia.valchak@gmail.com",
+      "shopItems": [
+        {
+          "orderId": 1,
+          "amount": 3
+        },
+        {
+          "orderId": 3,
+          "amount": 3
+        },
+        {
+          "orderId": 6,
+          "amount": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "userMail": "olia.valchak@gmail.com",
+      "shopItems": [
+        {
+          "orderId": 1,
+          "amount": 3
+        },
+        {
+          "orderId": 3,
+          "amount": 3
+        },
+        {
+          "orderId": 6,
+          "amount": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "userMail": "olia.valchak@gmail.com",
+      "shopItems": [
+        {
+          "orderId": 1,
+          "amount": 3
+        },
+        {
+          "orderId": 3,
+          "amount": 3
+        },
+        {
+          "orderId": 6,
+          "amount": 1
+        }
+      ],
+      "id": 3
+    }
   ]
 }
