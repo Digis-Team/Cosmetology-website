@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { api } from '../../../api';
 
 import {
@@ -12,10 +12,11 @@ export const ConfirmationOrder = () => {
   const [userEmail, setUserEmail] = useState('');
 
   const emailRegex = /\S+@\S+\.\S+/;
+  const history = useHistory();
 
   const setOrderData = () => (
-    api.postOrders(userEmail)
-      .then((result) => console.log(result))
+    api.createOrder(userEmail)
+      .then(() => history.push('/'))
   );
 
   const onChange = (event) => {
@@ -41,7 +42,7 @@ export const ConfirmationOrder = () => {
           onChange={onChange}
         />
         <div>{message}</div>
-        <Link to="/" onClick={setOrderData} className={`cart-button return ${isEmailInValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</Link>
+        <button type="button" onClick={setOrderData} className={`cart-button return ${isEmailInValid ? 'disabled-link' : ''}`}>{CONFIRM_EMAIL}</button>
       </div>
     </div>
   );

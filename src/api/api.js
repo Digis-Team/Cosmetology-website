@@ -12,15 +12,10 @@ export const api = Object.freeze({
 
     return res.data;
   },
-  postOrders: async (userEmail) => {
-    const pushShopItems = () => {
-      const cartList = JSON.parse(localStorage.getItem('cartList'));
-      const userList = [];
-      cartList.forEach((item) => userList.push({ orderId: item.id, amount: item.amount }));
-      return userList;
-    };
-
-    const order = { userMail: userEmail, shopItems: pushShopItems() };
+  createOrder: async (userEmail) => {
+    const cartList = JSON.parse(localStorage.getItem('cartList'));
+    const shopItems = cartList.map((item) => ({ shopItemId: item.id, amount: item.amount }));
+    const order = { userEmail, shopItems };
     const res = axios.post(`${root}/orders`, order);
 
     return res;
