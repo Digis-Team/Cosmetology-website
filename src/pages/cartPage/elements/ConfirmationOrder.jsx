@@ -7,12 +7,12 @@ import {
 } from '../../../constants';
 
 export const ConfirmationOrder = () => {
+  const history = useHistory();
   const [message, setMessage] = useState('');
   const [isEmailInValid, setIsEmailInValid] = useState(true);
   const [userEmail, setUserEmail] = useState('');
 
   const emailRegex = /\S+@\S+\.\S+/;
-  const history = useHistory();
 
   const setOrderData = () => (
     api.createOrder(userEmail)
