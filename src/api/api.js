@@ -7,7 +7,7 @@ export const api = Object.freeze({
     try {
       res = await axios.get(`${root}/shopItems${search}`);
     } catch (err) {
-      console.error(err);
+      console.error(err.message);
     }
     return res.data;
   },
@@ -16,7 +16,7 @@ export const api = Object.freeze({
     try {
       res = await axios.get(`${root}/questions${search}`);
     } catch (err) {
-      console.error(err);
+      console.error(err.message);
     }
     return res.data;
   },
