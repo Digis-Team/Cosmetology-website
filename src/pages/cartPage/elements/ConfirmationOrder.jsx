@@ -17,6 +17,7 @@ export const ConfirmationOrder = () => {
   const setOrderData = () => (
     api.createOrder(userEmail)
       .then(() => history.push('/'))
+      .catch((err) => console.log(err))
   );
 
   const onChange = (event) => {

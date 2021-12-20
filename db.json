@@ -172,24 +172,5 @@
       ]
     }
   ],
-  "orders": [
-    {
-      "userEmail": "test.test@gmail.com",
-      "shopItems": [
-        {
-          "shopItemId": 1,
-          "amount": 4
-        },
-        {
-          "shopItemId": 5,
-          "amount": 3
-        },
-        {
-          "shopItemId": 4,
-          "amount": 1
-        }
-      ],
-      "id": 1
-    }
-  ]
+  "orders": []
 }
